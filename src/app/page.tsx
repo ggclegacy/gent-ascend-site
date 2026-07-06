@@ -1,4 +1,5 @@
 import { ApplyCTA } from "@/components/ApplyCTA";
+import { AscendBlueprintEngine } from "@/components/AscendBlueprintEngine";
 import { AscendFramework } from "@/components/AscendFramework";
 import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/Hero";
@@ -13,6 +14,7 @@ export default function Home() {
       <Hero />
       <AscendFramework />
       <StorySystemsCommunity />
+      <AscendBlueprintEngine />
       <WhoWeBuildFor />
       <ApplyCTA />
       <Footer />

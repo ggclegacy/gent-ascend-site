@@ -1,8 +1,14 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
-import { Button } from "@/components/ui/Button";
+import {
+  motion,
+  useMotionTemplate,
+  useMotionValue,
+  useSpring,
+} from "framer-motion";
+import type { MotionValue } from "framer-motion";
+import type { ReactNode } from "react";
 
 const frameworkPlaques = [
   {
@@ -28,29 +34,29 @@ const frameworkPlaques = [
 ];
 
 export function Hero() {
+  const mouseX = useMotionValue(50);
+  const mouseY = useMotionValue(32);
+  const glowX = useSpring(mouseX, { stiffness: 45, damping: 24, mass: 0.6 });
+  const glowY = useSpring(mouseY, { stiffness: 45, damping: 24, mass: 0.6 });
+
   return (
     <section
       id="home"
-      className="relative isolate flex min-h-screen items-center overflow-hidden px-5 pb-24 pt-32 md:px-8 md:pt-36"
+      onMouseMove={(event) => {
+        const rect = event.currentTarget.getBoundingClientRect();
+        mouseX.set(((event.clientX - rect.left) / rect.width) * 100);
+        mouseY.set(((event.clientY - rect.top) / rect.height) * 100);
+      }}
+      className="relative isolate flex min-h-screen items-center overflow-hidden px-5 pb-24 pt-36 md:px-8 md:pt-40"
     >
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_28%,rgba(66,106,140,0.42),transparent_28%),radial-gradient(circle_at_50%_15%,rgba(224,184,74,0.14),transparent_24%),radial-gradient(circle_at_18%_60%,rgba(47,69,92,0.2),transparent_30%),linear-gradient(180deg,#0A0A0A_0%,#111111_42%,#0A0A0A_100%)]" />
-      <motion.div
-        aria-hidden="true"
-        animate={{ opacity: [0.22, 0.42, 0.22] }}
-        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute inset-0 -z-10 bg-[linear-gradient(rgba(237,232,222,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(237,232,222,0.022)_1px,transparent_1px)] bg-[size:92px_92px]"
-      />
-      <div className="absolute inset-x-[10%] top-24 -z-10 h-[76%] bg-[linear-gradient(90deg,transparent,rgba(237,232,222,0.04),transparent)] blur-sm" />
-      <div className="absolute left-1/2 top-24 -z-10 h-[74%] w-px -translate-x-1/2 bg-gradient-to-b from-gold/50 via-steel-bright/20 to-transparent" />
-      <div className="absolute bottom-28 left-1/2 -z-10 h-px w-[min(980px,86vw)] -translate-x-1/2 bg-gradient-to-r from-transparent via-gold/35 to-transparent" />
-      <div className="absolute inset-0 -z-10 opacity-[0.08] [background-image:radial-gradient(circle_at_center,#EDE8DE_0.7px,transparent_0.8px)] [background-size:18px_18px]" />
+      <HeroBackground glowX={glowX} glowY={glowY} />
 
       <div className="mx-auto flex w-full max-w-7xl flex-col items-center text-center">
         <motion.p
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
-          className="mb-8 text-xs font-semibold uppercase tracking-[0.38em] text-gold"
+          className="mb-8 bg-gradient-to-r from-[#8A641E] via-gold to-[#F2D36A] bg-clip-text text-xs font-semibold uppercase tracking-[0.38em] text-transparent drop-shadow-[0_0_18px_rgba(196,145,47,0.22)]"
         >
           Gent Ascend Collective
         </motion.p>
@@ -64,43 +70,123 @@ export function Hero() {
           className="mt-10 max-w-5xl"
         >
           <h1 className="font-serif text-[clamp(3rem,8vw,6.75rem)] uppercase leading-[0.86] tracking-[0.13em] text-ivory">
-            <span className="block bg-gradient-to-b from-gold-bright via-gold to-[#8F651F] bg-clip-text text-transparent drop-shadow-[0_0_28px_rgba(196,145,47,0.22)]">
+            <span className="block bg-[linear-gradient(180deg,#F2D36A_0%,#E0B84A_24%,#C4912F_54%,#8A641E_100%)] bg-clip-text text-transparent drop-shadow-[0_0_28px_rgba(196,145,47,0.28)]">
               Gent Ascend
             </span>
-            <span className="mt-2 block text-ivory drop-shadow-[0_0_22px_rgba(237,232,222,0.08)]">
+            <span className="mt-2 block text-ivory drop-shadow-[0_0_24px_rgba(66,106,140,0.16)]">
               Collective
             </span>
           </h1>
-          <p className="mx-auto mt-8 max-w-4xl font-serif text-3xl leading-tight text-ivory md:text-5xl">
+          <p className="mx-auto mt-8 max-w-4xl font-serif text-[clamp(2rem,6.8vw,3.5rem)] leading-tight text-ivory drop-shadow-[0_0_24px_rgba(196,145,47,0.08)]">
             Built for Businesses With Roots, Reputation, and Room to Ascend.
           </p>
-          <p className="mx-auto mt-7 max-w-3xl text-base leading-8 text-muted md:text-lg">
+          <p className="mx-auto mt-7 max-w-3xl text-base leading-8 text-[rgba(237,232,222,0.74)] md:text-lg">
             We build the digital world around serious local businesses — the
             story people connect with, the presence they trust, the intelligent
             tools that save time, and the infrastructure that keeps the
             operation moving.
           </p>
           <div className="mt-9 flex flex-col justify-center gap-4 sm:flex-row">
-            <Button
-              href="#apply"
-              className="border-gold-bright/70 bg-[linear-gradient(135deg,#E0B84A_0%,#C4912F_48%,#8F651F_100%)] px-6 text-obsidian shadow-[inset_0_1px_0_rgba(255,255,255,0.34),0_0_44px_rgba(196,145,47,0.22)] hover:bg-[linear-gradient(135deg,#F0CA60_0%,#C4912F_54%,#8F651F_100%)] hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.42),0_0_58px_rgba(224,184,74,0.34)]"
-            >
+            <HeroButton href="#apply" variant="primary">
               Start Your Ascent
-            </Button>
-            <Button
-              href="#framework"
-              variant="secondary"
-              className="border-gold/45 bg-obsidian/45 px-6 text-ivory shadow-[inset_0_1px_0_rgba(237,232,222,0.08),0_0_34px_rgba(66,106,140,0.14)] hover:border-gold hover:bg-steel/20 hover:shadow-[0_0_48px_rgba(66,106,140,0.28)]"
-            >
+            </HeroButton>
+            <HeroButton href="#framework" variant="secondary">
               Explore the Framework
-            </Button>
+            </HeroButton>
           </div>
-          <p className="mx-auto mt-9 max-w-3xl text-xs font-semibold uppercase leading-7 tracking-[0.24em] text-muted">
+          <p className="mx-auto mt-9 max-w-3xl text-xs font-semibold uppercase leading-7 tracking-[0.24em] text-[rgba(237,232,222,0.56)]">
             Identity • Presence • Intelligence • Infrastructure
           </p>
         </motion.div>
       </div>
     </section>
+  );
+}
+
+function HeroBackground({
+  glowX,
+  glowY,
+}: {
+  glowX: MotionValue<number>;
+  glowY: MotionValue<number>;
+}) {
+  const interactiveGlow = useMotionTemplate`radial-gradient(circle at ${glowX}% ${glowY}%, rgba(66,106,140,0.16), rgba(196,145,47,0.08) 18%, transparent 40%)`;
+
+  return (
+    <>
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_28%,rgba(66,106,140,0.5),transparent_28%),radial-gradient(circle_at_52%_16%,rgba(196,145,47,0.16),transparent_24%),radial-gradient(circle_at_18%_60%,rgba(47,69,92,0.22),transparent_30%),linear-gradient(180deg,#0A0A0A_0%,#111111_42%,#0A0A0A_100%)]" />
+      <motion.div
+        aria-hidden="true"
+        style={{ background: interactiveGlow }}
+        className="pointer-events-none absolute inset-0 -z-10 hidden md:block"
+      />
+      <motion.div
+        aria-hidden="true"
+        animate={{ opacity: [0.18, 0.38, 0.18], backgroundPosition: ["0px 0px", "22px -28px", "0px 0px"] }}
+        transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute inset-0 -z-10 bg-[linear-gradient(rgba(66,106,140,0.07)_1px,transparent_1px),linear-gradient(90deg,rgba(237,232,222,0.025)_1px,transparent_1px)] bg-[size:92px_92px]"
+      />
+      <motion.div
+        aria-hidden="true"
+        animate={{ y: ["2%", "-5%", "2%"], opacity: [0.16, 0.32, 0.16] }}
+        transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute inset-x-[12%] top-20 -z-10 h-[78%] bg-[linear-gradient(90deg,transparent,rgba(66,106,140,0.1),rgba(237,232,222,0.035),rgba(196,145,47,0.08),transparent)] blur-sm"
+      />
+      <div className="absolute left-1/2 top-24 -z-10 h-[74%] w-px -translate-x-1/2 bg-gradient-to-b from-gold/45 via-steel-bright/26 to-transparent" />
+      <div className="absolute left-[18%] top-28 -z-10 h-[58%] w-px rotate-[-9deg] bg-gradient-to-b from-transparent via-steel-bright/20 to-transparent" />
+      <div className="absolute right-[18%] top-28 -z-10 h-[58%] w-px rotate-[9deg] bg-gradient-to-b from-transparent via-gold/18 to-transparent" />
+      <motion.div
+        aria-hidden="true"
+        animate={{ x: ["-55%", "55%", "-55%"], opacity: [0.1, 0.35, 0.1] }}
+        transition={{ duration: 11, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute bottom-28 left-1/2 -z-10 h-px w-[min(980px,86vw)] -translate-x-1/2 bg-gradient-to-r from-transparent via-[#C4912F] to-transparent shadow-[0_0_30px_rgba(196,145,47,0.22)]"
+      />
+      <div className="absolute inset-0 -z-10 opacity-[0.09] [background-image:radial-gradient(circle_at_center,#426A8C_0.7px,transparent_0.8px)] [background-size:20px_20px]" />
+      <div className="absolute left-[8%] top-[34%] -z-10 hidden h-52 w-72 border-l border-t border-steel-bright/12 md:block" />
+      <div className="absolute right-[8%] top-[38%] -z-10 hidden h-52 w-72 border-r border-t border-gold/12 md:block" />
+      <motion.div
+        aria-hidden="true"
+        animate={{ opacity: [0.18, 0.38, 0.18] }}
+        transition={{ duration: 6.5, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute left-[13%] top-[48%] -z-10 hidden h-px w-[28%] bg-gradient-to-r from-transparent via-steel-bright/35 to-transparent md:block"
+      />
+      <motion.div
+        aria-hidden="true"
+        animate={{ opacity: [0.12, 0.32, 0.12] }}
+        transition={{ duration: 7.4, repeat: Infinity, ease: "easeInOut", delay: 1.2 }}
+        className="absolute right-[14%] top-[52%] -z-10 hidden h-px w-[24%] bg-gradient-to-r from-transparent via-gold/30 to-transparent md:block"
+      />
+    </>
+  );
+}
+
+function HeroButton({
+  children,
+  href,
+  variant,
+}: {
+  children: ReactNode;
+  href: string;
+  variant: "primary" | "secondary";
+}) {
+  const isPrimary = variant === "primary";
+
+  return (
+    <motion.a
+      href={href}
+      whileHover={{ y: -4 }}
+      whileTap={{ scale: 0.985 }}
+      transition={{ duration: 0.24, ease: "easeOut" }}
+      className={`group relative inline-flex min-h-14 items-center justify-center overflow-hidden rounded-full border px-7 text-sm font-semibold uppercase tracking-[0.16em] backdrop-blur-md ${
+        isPrimary
+          ? "border-[#F2D36A]/60 bg-[linear-gradient(145deg,#F2D36A_0%,#E0B84A_18%,#C4912F_48%,#8A641E_100%)] text-obsidian shadow-[inset_0_1px_0_rgba(255,255,255,0.42),inset_0_-10px_24px_rgba(10,10,10,0.18),0_18px_50px_rgba(196,145,47,0.22)] hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.52),inset_0_-10px_24px_rgba(10,10,10,0.16),0_22px_70px_rgba(196,145,47,0.36)]"
+          : "border-gold/35 bg-[linear-gradient(145deg,rgba(26,26,26,0.78),rgba(10,10,10,0.62)_58%,rgba(47,69,92,0.22))] text-ivory shadow-[inset_0_1px_0_rgba(237,232,222,0.12),0_18px_52px_rgba(66,106,140,0.16)] hover:border-steel-bright/70 hover:text-gold-bright hover:shadow-[inset_0_1px_0_rgba(237,232,222,0.16),0_22px_70px_rgba(66,106,140,0.28)]"
+      }`}
+    >
+      <span className="absolute inset-x-4 top-0 h-px bg-gradient-to-r from-transparent via-white/45 to-transparent" />
+      <span className="absolute inset-0 -translate-x-[130%] bg-gradient-to-r from-transparent via-white/22 to-transparent transition-transform duration-700 group-hover:translate-x-[130%]" />
+      <span className="relative">{children}</span>
+    </motion.a>
   );
 }
 

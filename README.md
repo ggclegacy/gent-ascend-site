@@ -16,6 +16,28 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+## Replit Deployment
+
+Run command:
+
+```bash
+npm run dev
+```
+
+Deployment build command:
+
+```bash
+npm run build
+```
+
+Deployment run command:
+
+```bash
+npm run start
+```
+
+This project should be published as a Node/Next.js web app. Do not use a static deployment or static export for the Replit production site.
+
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.

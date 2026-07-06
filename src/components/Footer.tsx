@@ -4,10 +4,7 @@ const links = ["Identity", "Presence", "Intelligence", "Infrastructure"];
 
 export function Footer() {
   return (
-    <footer
-      id="apply"
-      className="border-t border-white/10 bg-carbon px-5 py-12 md:px-8"
-    >
+    <footer className="border-t border-white/10 bg-carbon px-5 py-12 md:px-8">
       <div className="mx-auto flex max-w-7xl flex-col gap-8 md:flex-row md:items-end md:justify-between">
         <div>
           <p className="font-serif text-3xl text-ivory">Gent Ascend Collective</p>

@@ -36,28 +36,28 @@ const operatingNodes: OperatingNodeConfig[] = [
     icon: "origin",
     path: "M 50 31 L 50 13",
     pulse: { cx: [50, 50, 50, 50], cy: [31, 24, 13, 13] },
-    className: "left-1/2 top-0 -translate-x-1/2",
+    className: "left-1/2 -top-1 -translate-x-1/2 sm:-top-2",
   },
   {
     label: "Authority",
     icon: "authority",
     path: "M 69 50 L 91 50",
     pulse: { cx: [69, 78, 91, 91], cy: [50, 50, 50, 50] },
-    className: "right-0 top-1/2 -translate-y-1/2",
+    className: "-right-1 top-1/2 -translate-y-1/2 sm:-right-3",
   },
   {
     label: "Intelligence",
     icon: "intelligence",
     path: "M 31 50 L 9 50",
     pulse: { cx: [31, 22, 9, 9], cy: [50, 50, 50, 50] },
-    className: "left-0 top-1/2 -translate-y-1/2",
+    className: "-left-1 top-1/2 -translate-y-1/2 sm:-left-3",
   },
   {
     label: "Infrastructure",
     icon: "infrastructure",
     path: "M 50 69 L 50 87",
     pulse: { cx: [50, 50, 50, 50], cy: [69, 76, 87, 87] },
-    className: "bottom-0 left-1/2 w-[7.35rem] -translate-x-1/2 sm:w-40",
+    className: "bottom-0 left-1/2 w-[8.35rem] -translate-x-1/2 sm:-bottom-2 sm:w-48",
   },
 ];
 
@@ -356,16 +356,26 @@ function HeroMedallion() {
       />
 
       <motion.div
+        aria-hidden="true"
         animate={{
-          scale: [1, 1.035, 1],
+          opacity: [0.38, 0.92, 0.38],
+          scale: [0.88, 1.16, 0.88],
+        }}
+        transition={{ duration: 3.6, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute inset-[18%] z-10 rounded-full bg-[radial-gradient(circle,rgba(242,211,106,0.36)_0%,rgba(224,184,74,0.28)_18%,rgba(196,145,47,0.2)_36%,rgba(66,106,140,0.14)_58%,transparent_74%)] blur-2xl sm:inset-[12%]"
+      />
+
+      <motion.div
+        animate={{
+          scale: [1, 1.105, 1],
           filter: [
-            "drop-shadow(0 0 24px rgba(196,145,47,0.34)) drop-shadow(0 0 34px rgba(66,106,140,0.2))",
-            "drop-shadow(0 0 44px rgba(224,184,74,0.5)) drop-shadow(0 0 60px rgba(66,106,140,0.3))",
-            "drop-shadow(0 0 24px rgba(196,145,47,0.34)) drop-shadow(0 0 34px rgba(66,106,140,0.2))",
+            "drop-shadow(0 0 30px rgba(196,145,47,0.42)) drop-shadow(0 0 42px rgba(66,106,140,0.24))",
+            "drop-shadow(0 0 74px rgba(242,211,106,0.74)) drop-shadow(0 0 96px rgba(196,145,47,0.48)) drop-shadow(0 0 76px rgba(66,106,140,0.34))",
+            "drop-shadow(0 0 30px rgba(196,145,47,0.42)) drop-shadow(0 0 42px rgba(66,106,140,0.24))",
           ],
         }}
-        transition={{ duration: 5.9, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute inset-[29%] z-20 grid place-items-center sm:inset-[22%]"
+        transition={{ duration: 3.6, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute inset-[20%] z-20 grid place-items-center sm:inset-[11%]"
       >
         <Image
           src="/heroicon.png"
@@ -377,7 +387,7 @@ function HeroMedallion() {
         />
       </motion.div>
 
-      <div className="absolute inset-[27%] z-20 overflow-hidden rounded-full sm:inset-[22.5%]">
+      <div className="absolute inset-[20%] z-20 overflow-hidden rounded-full sm:inset-[11%]">
         <motion.span
           animate={{ x: ["-145%", "145%"] }}
           transition={{ duration: 9.4, repeat: Infinity, ease: "easeInOut" }}
@@ -543,7 +553,7 @@ function OperatingNode({
         ease: "easeInOut",
         times: [0, 0.58, 1],
       }}
-      className={`group absolute z-30 flex h-[2.85rem] w-[6.15rem] items-center gap-1.5 border bg-[linear-gradient(145deg,rgba(242,211,106,0.12),rgba(17,17,17,0.92)_28%,rgba(10,10,10,0.86)_62%,rgba(47,69,92,0.24))] px-2 text-[0.43rem] font-semibold uppercase tracking-[0.08em] text-steel-bright backdrop-blur-md [clip-path:polygon(10%_0,90%_0,100%_28%,100%_72%,90%_100%,10%_100%,0_72%,0_28%)] sm:h-[4.05rem] sm:w-40 sm:gap-3 sm:px-4 sm:text-xs sm:tracking-[0.14em] ${node.className}`}
+      className={`group absolute z-30 flex h-[3.35rem] w-[7.05rem] items-center gap-2 border bg-[linear-gradient(145deg,rgba(242,211,106,0.12),rgba(17,17,17,0.92)_28%,rgba(10,10,10,0.86)_62%,rgba(47,69,92,0.24))] px-2.5 text-[0.53rem] font-semibold uppercase tracking-[0.09em] text-steel-bright backdrop-blur-md [clip-path:polygon(10%_0,90%_0,100%_28%,100%_72%,90%_100%,10%_100%,0_72%,0_28%)] sm:h-[4.85rem] sm:w-48 sm:gap-3.5 sm:px-5 sm:text-sm sm:tracking-[0.13em] ${node.className}`}
     >
       <motion.span
         aria-hidden="true"
@@ -560,7 +570,7 @@ function OperatingNode({
       <span className="absolute inset-x-3 top-1 h-px bg-gradient-to-r from-transparent via-[#F2D36A]/62 to-transparent" />
       <span className="absolute inset-x-4 bottom-1 h-px bg-gradient-to-r from-transparent via-steel-bright/32 to-transparent" />
       <span className="absolute inset-1 border border-white/[0.045] [clip-path:polygon(9%_0,91%_0,100%_28%,100%_72%,91%_100%,9%_100%,0_72%,0_28%)]" />
-      <span className="relative grid size-5 shrink-0 place-items-center rounded-full border border-gold/35 bg-obsidian/75 shadow-[inset_0_1px_0_rgba(237,232,222,0.1),0_0_18px_rgba(196,145,47,0.14),0_0_16px_rgba(66,106,140,0.08)] sm:size-8">
+      <span className="relative grid size-6 shrink-0 place-items-center rounded-full border border-gold/35 bg-obsidian/75 shadow-[inset_0_1px_0_rgba(237,232,222,0.1),0_0_18px_rgba(196,145,47,0.14),0_0_16px_rgba(66,106,140,0.08)] sm:size-10">
         <OperatingIcon icon={node.icon} />
       </span>
       <span className="relative min-w-0 leading-none">{node.label}</span>
@@ -576,7 +586,7 @@ function OperatingIcon({ icon }: { icon: OperatingIconName }) {
       viewBox="0 0 24 24"
       fill="none"
       aria-hidden="true"
-      className="size-4 sm:size-5"
+      className="size-[1.125rem] sm:size-6"
     >
       {icon === "origin" && (
         <>

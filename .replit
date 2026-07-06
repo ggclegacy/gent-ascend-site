@@ -5,6 +5,7 @@ modules = ["nodejs-20"]
 channel = "stable-24_05"
 
 [deployment]
+deploymentTarget = "cloudrun"
 build = "npm run build"
 run = "npm run start"
 

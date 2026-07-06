@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0a0a0a;
+  --foreground: #ede8de;
+  --obsidian: #0a0a0a;
+  --carbon: #111111;
+  --graphite: #1a1a1a;
+  --gold: #c4912f;
+  --gold-bright: #e0b84a;
+  --steel: #2f455c;
+  --steel-bright: #426a8c;
+  --ivory: #ede8de;
+  --muted: #7a7e84;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-obsidian: var(--obsidian);
+  --color-carbon: var(--carbon);
+  --color-graphite: var(--graphite);
+  --color-gold: var(--gold);
+  --color-gold-bright: var(--gold-bright);
+  --color-steel: var(--steel);
+  --color-steel-bright: var(--steel-bright);
+  --color-ivory: var(--ivory);
+  --color-muted: var(--muted);
+  --font-sans: "Inter", "Avenir Next", "Segoe UI", Arial, sans-serif;
+  --font-serif: "Cormorant Garamond", "Iowan Old Style", "Times New Roman", serif;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background: color-mix(in srgb, var(--gold) 72%, transparent);
+  color: var(--obsidian);
+}
+
+a {
+  text-decoration: none;
+}

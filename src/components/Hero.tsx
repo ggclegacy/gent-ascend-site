@@ -13,23 +13,19 @@ import type { ReactNode } from "react";
 const frameworkPlaques = [
   {
     label: "Identity",
-    position:
-      "left-[7%] top-[18%] sm:left-[8%] sm:top-[20%] lg:left-[6%] lg:top-[19%]",
+    angle: 315,
   },
   {
     label: "Presence",
-    position:
-      "right-[7%] top-[18%] sm:right-[8%] sm:top-[20%] lg:right-[6%] lg:top-[19%]",
+    angle: 45,
   },
   {
     label: "Intelligence",
-    position:
-      "bottom-[15%] left-[5%] sm:bottom-[17%] sm:left-[7%] lg:bottom-[18%] lg:left-[5%]",
+    angle: 225,
   },
   {
     label: "Infrastructure",
-    position:
-      "bottom-[15%] right-[5%] sm:bottom-[17%] sm:right-[7%] lg:bottom-[18%] lg:right-[5%]",
+    angle: 135,
   },
 ];
 
@@ -196,7 +192,7 @@ function HeroMedallion() {
       initial={{ opacity: 0, scale: 0.9 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 1.05, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
-      className="relative aspect-square w-full max-w-[720px]"
+      className="relative aspect-square w-full max-w-[760px]"
       aria-label="Gent Ascend Collective emblem"
     >
       <div className="absolute inset-[4%] rounded-full border border-white/[0.04] bg-[linear-gradient(rgba(237,232,222,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(237,232,222,0.024)_1px,transparent_1px)] bg-[size:38px_38px] opacity-80 [mask-image:radial-gradient(circle,black_0%,black_56%,transparent_76%)]" />
@@ -206,9 +202,14 @@ function HeroMedallion() {
       <div className="absolute inset-[24%] rounded-full border border-white/[0.04]" />
 
       <motion.div
-        animate={{ opacity: [0.34, 0.7, 0.34], scale: [0.97, 1.035, 0.97] }}
-        transition={{ duration: 7.8, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute inset-[10%] rounded-full bg-[radial-gradient(circle,rgba(66,106,140,0.28)_0%,rgba(196,145,47,0.13)_34%,transparent_68%)] blur-3xl"
+        animate={{ opacity: [0.34, 0.84, 0.34], scale: [0.94, 1.08, 0.94] }}
+        transition={{ duration: 6.8, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute inset-[4%] rounded-full bg-[radial-gradient(circle,rgba(242,211,106,0.2)_0%,rgba(196,145,47,0.18)_24%,rgba(66,106,140,0.22)_48%,transparent_72%)] blur-3xl"
+      />
+      <motion.div
+        animate={{ opacity: [0.18, 0.58, 0.18], scale: [0.9, 1.03, 0.9] }}
+        transition={{ duration: 5.8, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute inset-[19%] rounded-full bg-[radial-gradient(circle,rgba(224,184,74,0.3),rgba(196,145,47,0.12)_36%,transparent_68%)] blur-2xl"
       />
 
       <div className="absolute inset-[13%] rounded-full border border-white/[0.08] bg-[radial-gradient(circle_at_50%_35%,rgba(237,232,222,0.05),transparent_24%),linear-gradient(145deg,rgba(26,26,26,0.66),rgba(10,10,10,0.5)_58%,rgba(47,69,92,0.16))] shadow-[0_56px_150px_rgba(0,0,0,0.62),inset_0_1px_0_rgba(237,232,222,0.08),inset_0_-1px_0_rgba(196,145,47,0.14),inset_0_0_86px_rgba(66,106,140,0.12)] backdrop-blur-md" />
@@ -274,19 +275,19 @@ function HeroMedallion() {
         className="absolute inset-[23%] rounded-full border border-steel-bright/25 bg-steel/10 shadow-[0_0_54px_rgba(66,106,140,0.16)]"
       />
       <div className="absolute inset-[22%] rounded-full border border-white/10 bg-[linear-gradient(145deg,rgba(26,26,26,0.68),rgba(10,10,10,0.8))] shadow-[inset_0_0_92px_rgba(0,0,0,0.68),inset_0_1px_0_rgba(237,232,222,0.08)] backdrop-blur-sm" />
-      <div className="absolute inset-[27%] rounded-full border border-gold/30 bg-[radial-gradient(circle_at_50%_34%,rgba(66,106,140,0.14),rgba(10,10,10,0.86)_58%)] shadow-[0_0_96px_rgba(196,145,47,0.17),inset_0_0_78px_rgba(66,106,140,0.14),inset_0_1px_0_rgba(224,184,74,0.12)]" />
+      <div className="absolute inset-[24%] rounded-full border border-gold/30 bg-[radial-gradient(circle_at_50%_34%,rgba(66,106,140,0.14),rgba(10,10,10,0.86)_58%)] shadow-[0_0_120px_rgba(196,145,47,0.22),inset_0_0_82px_rgba(66,106,140,0.15),inset_0_1px_0_rgba(224,184,74,0.14)]" />
 
       <motion.div
         animate={{
-          scale: [1, 1.018, 1],
+          scale: [1, 1.05, 1],
           filter: [
-            "drop-shadow(0 0 18px rgba(196,145,47,0.22)) drop-shadow(0 0 28px rgba(66,106,140,0.18))",
-            "drop-shadow(0 0 28px rgba(224,184,74,0.32)) drop-shadow(0 0 44px rgba(66,106,140,0.26))",
-            "drop-shadow(0 0 18px rgba(196,145,47,0.22)) drop-shadow(0 0 28px rgba(66,106,140,0.18))",
+            "drop-shadow(0 0 22px rgba(196,145,47,0.3)) drop-shadow(0 0 30px rgba(66,106,140,0.2))",
+            "drop-shadow(0 0 42px rgba(224,184,74,0.48)) drop-shadow(0 0 58px rgba(66,106,140,0.32))",
+            "drop-shadow(0 0 22px rgba(196,145,47,0.3)) drop-shadow(0 0 30px rgba(66,106,140,0.2))",
           ],
         }}
-        transition={{ duration: 7.2, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute inset-[28%] grid place-items-center"
+        transition={{ duration: 5.8, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute inset-[22%] grid place-items-center"
       >
         <Image
           src="/heroicon.png"
@@ -298,7 +299,7 @@ function HeroMedallion() {
         />
       </motion.div>
 
-      <div className="absolute inset-[29%] overflow-hidden rounded-full">
+      <div className="absolute inset-[24%] overflow-hidden rounded-full">
         <motion.span
           animate={{ x: ["-145%", "145%"] }}
           transition={{ duration: 8.8, repeat: Infinity, ease: "easeInOut" }}
@@ -306,22 +307,46 @@ function HeroMedallion() {
         />
       </div>
 
-      {frameworkPlaques.map((plaque) => (
-        <motion.a
-          key={plaque.label}
-          href="#framework"
-          whileHover={{ y: -4, scale: 1.015 }}
-          transition={{ duration: 0.24, ease: "easeOut" }}
-          className={`absolute ${plaque.position} group w-[9.2rem] border border-gold/25 bg-[linear-gradient(135deg,rgba(26,26,26,0.86),rgba(10,10,10,0.72)_58%,rgba(47,69,92,0.18))] px-3 py-2.5 text-center text-[0.58rem] font-semibold uppercase tracking-[0.2em] text-gold shadow-[0_0_24px_rgba(66,106,140,0.16),inset_0_1px_0_rgba(237,232,222,0.08),inset_0_-1px_0_rgba(196,145,47,0.12)] backdrop-blur-md transition-colors hover:border-gold-bright hover:text-gold-bright hover:shadow-[0_0_42px_rgba(66,106,140,0.34),inset_0_1px_0_rgba(237,232,222,0.13)] sm:w-44 sm:px-4 sm:py-3 sm:text-xs`}
-        >
-          <span className="mb-2 grid grid-cols-[1fr_auto_1fr] items-center gap-2">
-            <span className="h-px bg-gradient-to-r from-transparent to-steel-bright/60 transition-colors group-hover:to-gold-bright/70" />
-            <span className="size-1.5 rotate-45 border border-steel-bright/70 transition-colors group-hover:border-gold-bright" />
-            <span className="h-px bg-gradient-to-l from-transparent to-steel-bright/60 transition-colors group-hover:to-gold-bright/70" />
-          </span>
-          {plaque.label}
-        </motion.a>
-      ))}
+      <motion.div
+        className="absolute inset-0"
+        animate={{ rotate: 360 }}
+        transition={{ duration: 95, repeat: Infinity, ease: "linear" }}
+      >
+        {frameworkPlaques.map((plaque) => (
+          <OrbitPlaque
+            key={plaque.label}
+            label={plaque.label}
+            angle={plaque.angle}
+          />
+        ))}
+      </motion.div>
     </motion.div>
+  );
+}
+
+function OrbitPlaque({ label, angle }: { label: string; angle: number }) {
+  return (
+    <motion.a
+      href="#framework"
+      whileHover={{ scale: 1.035 }}
+      transition={{ duration: 0.24, ease: "easeOut" }}
+      className="group absolute left-1/2 top-1/2 w-[8.2rem] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#E0B84A]/38 bg-[linear-gradient(145deg,rgba(224,184,74,0.2),rgba(17,17,17,0.82)_34%,rgba(10,10,10,0.76)_62%,rgba(47,69,92,0.24))] px-3 py-2 text-center text-[0.55rem] font-semibold uppercase tracking-[0.18em] text-steel-bright shadow-[inset_0_1px_0_rgba(255,255,255,0.16),inset_0_-8px_18px_rgba(10,10,10,0.24),0_16px_38px_rgba(0,0,0,0.28),0_0_28px_rgba(196,145,47,0.16)] backdrop-blur-md transition-colors hover:border-gold-bright hover:text-gold-bright hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.2),0_0_42px_rgba(196,145,47,0.26),0_0_34px_rgba(66,106,140,0.3)] sm:w-40 sm:px-4 sm:py-3 sm:text-xs"
+      style={{
+        transform: `translate(-50%, -50%) rotate(${angle}deg) translateY(calc(-1 * min(31vw, 315px))) rotate(${-angle}deg)`,
+      }}
+    >
+      <motion.span
+        className="block"
+        animate={{ rotate: -360 }}
+        transition={{ duration: 95, repeat: Infinity, ease: "linear" }}
+      >
+        <span className="mb-1.5 grid grid-cols-[1fr_auto_1fr] items-center gap-2">
+          <span className="h-px bg-gradient-to-r from-transparent to-gold/70 transition-colors group-hover:to-steel-bright" />
+          <span className="size-1.5 rounded-full border border-gold/65 bg-obsidian shadow-[0_0_10px_rgba(196,145,47,0.32)]" />
+          <span className="h-px bg-gradient-to-l from-transparent to-gold/70 transition-colors group-hover:to-steel-bright" />
+        </span>
+        {label}
+      </motion.span>
+    </motion.a>
   );
 }

@@ -10,8 +10,8 @@ import {
 import type { MotionValue } from "framer-motion";
 import type { ReactNode } from "react";
 
-const activationDuration = 2.15;
-const activationCycle = 9.4;
+const activationDuration = 2.45;
+const activationCycle = 10.6;
 
 type OperatingIconName =
   | "origin"
@@ -34,30 +34,30 @@ const operatingNodes: OperatingNodeConfig[] = [
   {
     label: "Origin",
     icon: "origin",
-    path: "M 43 33 C 39 25 34 20 27 18",
-    pulse: { cx: [43, 39, 34, 27], cy: [33, 25, 20, 18] },
-    className: "left-[2%] top-[6%] sm:left-[12%] sm:top-[5%]",
+    path: "M 42 32 C 37 23 31 17 23 14",
+    pulse: { cx: [42, 37, 31, 23], cy: [32, 23, 17, 14] },
+    className: "left-0 top-[3%] sm:left-[7%] sm:top-[2%]",
   },
   {
     label: "Authority",
     icon: "authority",
-    path: "M 57 33 C 61 25 66 20 73 18",
-    pulse: { cx: [57, 61, 66, 73], cy: [33, 25, 20, 18] },
-    className: "right-[2%] top-[6%] sm:right-[12%] sm:top-[5%]",
+    path: "M 58 32 C 63 23 69 17 77 14",
+    pulse: { cx: [58, 63, 69, 77], cy: [32, 23, 17, 14] },
+    className: "right-0 top-[3%] sm:right-[7%] sm:top-[2%]",
   },
   {
     label: "Intelligence",
     icon: "intelligence",
-    path: "M 43 67 C 39 75 34 80 27 82",
-    pulse: { cx: [43, 39, 34, 27], cy: [67, 75, 80, 82] },
-    className: "bottom-[6%] left-[2%] sm:bottom-[5%] sm:left-[12%]",
+    path: "M 42 68 C 37 77 31 83 23 86",
+    pulse: { cx: [42, 37, 31, 23], cy: [68, 77, 83, 86] },
+    className: "bottom-[3%] left-0 sm:bottom-[2%] sm:left-[7%]",
   },
   {
     label: "Infrastructure",
     icon: "infrastructure",
-    path: "M 57 67 C 61 75 66 80 73 82",
-    pulse: { cx: [57, 61, 66, 73], cy: [67, 75, 80, 82] },
-    className: "bottom-[6%] right-[2%] w-[8.35rem] sm:bottom-[5%] sm:right-[12%] sm:w-48",
+    path: "M 58 68 C 63 77 69 83 77 86",
+    pulse: { cx: [58, 63, 69, 77], cy: [68, 77, 83, 86] },
+    className: "bottom-[3%] right-0 w-[8.75rem] sm:bottom-[2%] sm:right-[7%] sm:w-56",
   },
 ];
 
@@ -358,23 +358,23 @@ function HeroMedallion() {
       <motion.div
         aria-hidden="true"
         animate={{
-          opacity: [0.38, 0.92, 0.38],
-          scale: [0.88, 1.16, 0.88],
+          opacity: [0.32, 0.72, 0.32],
+          scale: [0.92, 1.13, 0.92],
         }}
-        transition={{ duration: 3.6, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute inset-[18%] z-10 rounded-full bg-[radial-gradient(circle,rgba(242,211,106,0.36)_0%,rgba(224,184,74,0.28)_18%,rgba(196,145,47,0.2)_36%,rgba(66,106,140,0.14)_58%,transparent_74%)] blur-2xl sm:inset-[12%]"
+        transition={{ duration: 4.4, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute inset-[18%] z-10 rounded-full bg-[radial-gradient(circle,rgba(242,211,106,0.28)_0%,rgba(224,184,74,0.22)_18%,rgba(196,145,47,0.16)_36%,rgba(66,106,140,0.12)_58%,transparent_74%)] blur-2xl sm:inset-[12%]"
       />
 
       <motion.div
         animate={{
-          scale: [1, 1.105, 1],
+          scale: [1, 1.085, 1],
           filter: [
-            "drop-shadow(0 0 30px rgba(196,145,47,0.42)) drop-shadow(0 0 42px rgba(66,106,140,0.24))",
-            "drop-shadow(0 0 74px rgba(242,211,106,0.74)) drop-shadow(0 0 96px rgba(196,145,47,0.48)) drop-shadow(0 0 76px rgba(66,106,140,0.34))",
-            "drop-shadow(0 0 30px rgba(196,145,47,0.42)) drop-shadow(0 0 42px rgba(66,106,140,0.24))",
+            "drop-shadow(0 0 28px rgba(196,145,47,0.38)) drop-shadow(0 0 36px rgba(66,106,140,0.2))",
+            "drop-shadow(0 0 54px rgba(242,211,106,0.56)) drop-shadow(0 0 72px rgba(196,145,47,0.38)) drop-shadow(0 0 54px rgba(66,106,140,0.26))",
+            "drop-shadow(0 0 28px rgba(196,145,47,0.38)) drop-shadow(0 0 36px rgba(66,106,140,0.2))",
           ],
         }}
-        transition={{ duration: 3.6, repeat: Infinity, ease: "easeInOut" }}
+        transition={{ duration: 4.4, repeat: Infinity, ease: "easeInOut" }}
         className="absolute inset-[20%] z-20 grid place-items-center sm:inset-[11%]"
       >
         <Image
@@ -390,7 +390,7 @@ function HeroMedallion() {
       <div className="absolute inset-[20%] z-20 overflow-hidden rounded-full sm:inset-[11%]">
         <motion.span
           animate={{ x: ["-145%", "145%"] }}
-          transition={{ duration: 9.4, repeat: Infinity, ease: "easeInOut" }}
+          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
           className="absolute top-0 h-full w-1/5 rotate-12 bg-gradient-to-r from-transparent via-ivory/10 to-transparent"
         />
       </div>
@@ -525,24 +525,24 @@ function OperatingNode({
       href="#framework"
       animate={{
         borderColor: [
-          "rgba(196,145,47,0.32)",
-          "rgba(242,211,106,0.88)",
-          "rgba(196,145,47,0.32)",
-        ],
-        background: [
-          "linear-gradient(145deg,rgba(242,211,106,0.82) 0%,rgba(224,184,74,0.72) 20%,rgba(196,145,47,0.7) 50%,rgba(138,100,30,0.78) 100%)",
-          "linear-gradient(145deg,rgba(255,244,190,0.95) 0%,rgba(242,211,106,0.9) 18%,rgba(224,184,74,0.86) 46%,rgba(196,145,47,0.88) 100%)",
-          "linear-gradient(145deg,rgba(242,211,106,0.82) 0%,rgba(224,184,74,0.72) 20%,rgba(196,145,47,0.7) 50%,rgba(138,100,30,0.78) 100%)",
+          "rgba(196,145,47,0.64)",
+          "rgba(242,211,106,0.98)",
+          "rgba(196,145,47,0.64)",
         ],
         color: [
-          "rgba(47,69,92,0.94)",
-          "rgba(24,54,82,1)",
-          "rgba(47,69,92,0.94)",
+          "rgba(224,184,74,0.92)",
+          "rgba(242,211,106,1)",
+          "rgba(224,184,74,0.92)",
+        ],
+        textShadow: [
+          "0 0 12px rgba(196,145,47,0.12)",
+          "0 0 22px rgba(242,211,106,0.42)",
+          "0 0 12px rgba(196,145,47,0.12)",
         ],
         boxShadow: [
-          "inset 0 1px 0 rgba(255,248,213,0.42), inset 0 -14px 24px rgba(52,34,8,0.34), inset 0 0 24px rgba(138,100,30,0.22), 0 18px 42px rgba(0,0,0,0.34), 0 0 22px rgba(196,145,47,0.18)",
-          "inset 0 1px 0 rgba(255,255,255,0.62), inset 0 -14px 24px rgba(52,34,8,0.22), inset 0 0 30px rgba(255,244,190,0.26), 0 24px 62px rgba(0,0,0,0.42), 0 0 58px rgba(242,211,106,0.56), 0 0 34px rgba(196,145,47,0.42)",
-          "inset 0 1px 0 rgba(255,248,213,0.42), inset 0 -14px 24px rgba(52,34,8,0.34), inset 0 0 24px rgba(138,100,30,0.22), 0 18px 42px rgba(0,0,0,0.34), 0 0 22px rgba(196,145,47,0.18)",
+          "inset 0 1px 0 rgba(237,232,222,0.14), inset 0 -16px 28px rgba(10,10,10,0.42), inset 0 0 26px rgba(66,106,140,0.22), 0 18px 46px rgba(0,0,0,0.36), 0 0 22px rgba(196,145,47,0.18)",
+          "inset 0 1px 0 rgba(255,248,213,0.28), inset 0 -16px 28px rgba(10,10,10,0.34), inset 0 0 34px rgba(66,106,140,0.34), 0 24px 68px rgba(0,0,0,0.46), 0 0 66px rgba(242,211,106,0.5), 0 0 42px rgba(196,145,47,0.42)",
+          "inset 0 1px 0 rgba(237,232,222,0.14), inset 0 -16px 28px rgba(10,10,10,0.42), inset 0 0 26px rgba(66,106,140,0.22), 0 18px 46px rgba(0,0,0,0.36), 0 0 22px rgba(196,145,47,0.18)",
         ],
       }}
       transition={{
@@ -553,11 +553,11 @@ function OperatingNode({
         ease: "easeInOut",
         times: [0, 0.58, 1],
       }}
-      className={`group absolute z-30 flex h-[3.35rem] w-[7.05rem] items-center gap-2 border bg-[linear-gradient(145deg,rgba(242,211,106,0.82)_0%,rgba(224,184,74,0.72)_20%,rgba(196,145,47,0.7)_50%,rgba(138,100,30,0.78)_100%)] px-2.5 text-[0.53rem] font-semibold uppercase tracking-[0.09em] text-steel backdrop-blur-md [clip-path:polygon(10%_0,90%_0,100%_28%,100%_72%,90%_100%,10%_100%,0_72%,0_28%)] sm:h-[4.85rem] sm:w-48 sm:gap-3.5 sm:px-5 sm:text-sm sm:tracking-[0.13em] ${node.className}`}
+      className={`group absolute z-30 flex h-[3.55rem] w-[7.45rem] items-center gap-2 border bg-[linear-gradient(145deg,rgba(66,106,140,0.72)_0%,rgba(47,69,92,0.92)_28%,rgba(17,17,17,0.94)_64%,rgba(10,10,10,0.9)_100%)] px-3 text-[0.62rem] font-semibold uppercase tracking-[0.08em] text-gold-bright backdrop-blur-md [clip-path:polygon(10%_0,90%_0,100%_28%,100%_72%,90%_100%,10%_100%,0_72%,0_28%)] sm:h-[5.05rem] sm:w-56 sm:gap-4 sm:px-5 sm:text-base sm:tracking-[0.11em] ${node.className}`}
     >
       <motion.span
         aria-hidden="true"
-        animate={{ opacity: [0.06, 0.34, 0.06], x: ["-120%", "135%", "135%"] }}
+        animate={{ opacity: [0.08, 0.28, 0.08], x: ["-125%", "140%", "140%"] }}
         transition={{
           duration: activationDuration,
           repeat: Infinity,
@@ -565,12 +565,13 @@ function OperatingNode({
           delay,
           ease: "easeInOut",
         }}
-        className="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-transparent via-white/32 to-transparent"
+        className="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-transparent via-gold-bright/26 to-transparent"
       />
       <span className="absolute inset-x-3 top-1 h-px bg-gradient-to-r from-transparent via-[#F2D36A]/62 to-transparent" />
-      <span className="absolute inset-x-4 bottom-1 h-px bg-gradient-to-r from-transparent via-steel/40 to-transparent" />
-      <span className="absolute inset-1 border border-white/[0.16] [clip-path:polygon(9%_0,91%_0,100%_28%,100%_72%,91%_100%,9%_100%,0_72%,0_28%)]" />
-      <span className="relative grid size-6 shrink-0 place-items-center rounded-full border border-steel/35 bg-[rgba(10,10,10,0.16)] shadow-[inset_0_1px_0_rgba(255,248,213,0.22),0_0_18px_rgba(196,145,47,0.2),0_0_14px_rgba(47,69,92,0.14)] sm:size-10">
+      <span className="absolute inset-x-4 bottom-1 h-px bg-gradient-to-r from-transparent via-gold/45 to-transparent" />
+      <span className="absolute inset-1 border border-gold/24 [clip-path:polygon(9%_0,91%_0,100%_28%,100%_72%,91%_100%,9%_100%,0_72%,0_28%)]" />
+      <span className="absolute inset-0 -z-10 translate-y-1 bg-[linear-gradient(145deg,rgba(138,100,30,0.5),rgba(196,145,47,0.2),transparent_64%)] blur-sm [clip-path:polygon(10%_0,90%_0,100%_28%,100%_72%,90%_100%,10%_100%,0_72%,0_28%)]" />
+      <span className="relative grid size-7 shrink-0 place-items-center rounded-full border border-gold/45 bg-obsidian/45 text-gold-bright shadow-[inset_0_1px_0_rgba(255,248,213,0.18),0_0_20px_rgba(196,145,47,0.22),0_0_18px_rgba(66,106,140,0.16)] sm:size-11">
         <OperatingIcon icon={node.icon} />
       </span>
       <span className="relative min-w-0 leading-none">{node.label}</span>
@@ -586,7 +587,7 @@ function OperatingIcon({ icon }: { icon: OperatingIconName }) {
       viewBox="0 0 24 24"
       fill="none"
       aria-hidden="true"
-      className="size-[1.125rem] sm:size-6"
+      className="size-5 sm:size-7"
     >
       {icon === "origin" && (
         <>

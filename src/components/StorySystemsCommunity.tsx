@@ -39,7 +39,8 @@ export function StorySystemsCommunity() {
       id="story"
       className="relative isolate overflow-hidden px-5 py-24 md:px-8 md:py-32"
     >
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_18%_24%,rgba(196,145,47,0.12),transparent_28%),radial-gradient(circle_at_82%_44%,rgba(66,106,140,0.3),transparent_34%),linear-gradient(180deg,#0A0A0A_0%,#111111_48%,#0A0A0A_100%)]" />
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_18%_18%,rgba(196,145,47,0.18),transparent_24%),radial-gradient(circle_at_82%_42%,rgba(66,106,140,0.34),transparent_30%),radial-gradient(circle_at_48%_88%,rgba(47,69,92,0.24),transparent_36%),linear-gradient(180deg,#0A0A0A_0%,#111111_38%,#0A0A0A_100%)]" />
+      <div className="absolute inset-x-[8%] top-20 -z-10 h-px bg-gradient-to-r from-transparent via-gold-bright/50 to-transparent shadow-[0_0_42px_rgba(196,145,47,0.2)]" />
       <motion.div
         aria-hidden="true"
         animate={{
@@ -47,13 +48,13 @@ export function StorySystemsCommunity() {
           backgroundPosition: ["0px 0px", "30px -36px", "0px 0px"],
         }}
         transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute inset-0 -z-10 bg-[linear-gradient(rgba(66,106,140,0.055)_1px,transparent_1px),linear-gradient(90deg,rgba(237,232,222,0.02)_1px,transparent_1px)] bg-[size:96px_96px]"
+        className="absolute inset-0 -z-10 bg-[linear-gradient(rgba(66,106,140,0.075)_1px,transparent_1px),linear-gradient(90deg,rgba(196,145,47,0.035)_1px,transparent_1px)] bg-[size:96px_96px] [mask-image:radial-gradient(circle_at_center,black_0%,black_58%,transparent_86%)]"
       />
       <motion.div
         aria-hidden="true"
         animate={{ x: ["-50%", "50%", "-50%"], opacity: [0.08, 0.3, 0.08] }}
         transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute left-1/2 top-[45%] -z-10 h-px w-[min(1040px,86vw)] -translate-x-1/2 bg-gradient-to-r from-transparent via-gold to-transparent shadow-[0_0_34px_rgba(196,145,47,0.18)]"
+        className="absolute left-1/2 top-[45%] -z-10 h-px w-[min(1040px,86vw)] -translate-x-1/2 bg-gradient-to-r from-transparent via-gold-bright to-transparent shadow-[0_0_42px_rgba(196,145,47,0.26)]"
       />
       <div className="absolute inset-x-0 bottom-0 -z-10 h-64 bg-gradient-to-t from-obsidian to-transparent" />
 
@@ -68,10 +69,10 @@ export function StorySystemsCommunity() {
           <p className="mb-5 bg-[linear-gradient(90deg,#8A641E,#C4912F,#F2D36A,#C4912F)] bg-clip-text text-xs font-semibold uppercase tracking-[0.34em] text-transparent drop-shadow-[0_0_18px_rgba(196,145,47,0.22)]">
             The Digital World Around The Business
           </p>
-          <h2 className="font-serif text-4xl leading-tight text-ivory drop-shadow-[0_0_30px_rgba(66,106,140,0.12)] md:text-6xl">
+          <h2 className="font-serif text-4xl leading-tight text-ivory drop-shadow-[0_0_34px_rgba(66,106,140,0.18)] md:text-6xl">
             Your Business Has a Story. We Build the System Around It.
           </h2>
-          <p className="mx-auto mt-7 max-w-4xl text-base leading-8 text-[rgba(237,232,222,0.72)] md:text-lg">
+          <p className="mx-auto mt-7 max-w-4xl text-base leading-8 text-[rgba(237,232,222,0.78)] md:text-lg">
             Most businesses already have the hard part: real work, real
             customers, real reputation, and a reason people want to support
             them. Gent Ascend Collective turns that foundation into a modern
@@ -81,7 +82,7 @@ export function StorySystemsCommunity() {
         </motion.div>
 
         <div className="relative mt-16">
-          <div className="pointer-events-none absolute inset-x-8 top-28 hidden h-px bg-gradient-to-r from-transparent via-steel-bright/35 to-transparent lg:block" />
+          <div className="pointer-events-none absolute inset-x-8 top-28 hidden h-px bg-gradient-to-r from-transparent via-gold/35 to-transparent lg:block" />
           <div className="grid gap-6 lg:grid-cols-3">
             {pillars.map((pillar, index) => (
               <StoryModule key={pillar.title} pillar={pillar} index={index} />
@@ -113,12 +114,12 @@ function StoryModule({
         delay: index * 0.08,
         ease: [0.22, 1, 0.36, 1],
       }}
-      className="group relative min-h-[620px] overflow-hidden rounded-[1.35rem] border border-white/10 bg-[linear-gradient(145deg,rgba(26,26,26,0.9),rgba(10,10,10,0.78)_54%,rgba(47,69,92,0.2))] p-5 shadow-[0_32px_120px_rgba(0,0,0,0.46),inset_0_1px_0_rgba(237,232,222,0.08)] backdrop-blur-md md:p-6"
+      className="group relative min-h-[620px] overflow-hidden rounded-[1.35rem] border border-gold/18 bg-[linear-gradient(145deg,rgba(17,17,17,0.96),rgba(10,10,10,0.9)_46%,rgba(47,69,92,0.26)_100%)] p-5 shadow-[0_34px_130px_rgba(0,0,0,0.54),0_0_64px_rgba(66,106,140,0.1),inset_0_1px_0_rgba(237,232,222,0.08)] backdrop-blur-md transition-colors duration-500 hover:border-gold/35 md:p-6"
     >
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(237,232,222,0.024)_1px,transparent_1px),linear-gradient(90deg,rgba(66,106,140,0.035)_1px,transparent_1px)] bg-[size:44px_44px] opacity-45" />
-      <div className="absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,#8A641E,#E0B84A,#C4912F,transparent)] opacity-85" />
-      <div className="absolute -right-24 -top-24 size-56 rounded-full bg-steel-bright/14 blur-3xl transition-opacity duration-500 group-hover:opacity-100" />
-      <div className="absolute -bottom-24 -left-24 size-48 rounded-full bg-gold/10 blur-3xl opacity-70 transition-opacity duration-500 group-hover:opacity-100" />
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(66,106,140,0.055)_1px,transparent_1px),linear-gradient(90deg,rgba(196,145,47,0.035)_1px,transparent_1px)] bg-[size:44px_44px] opacity-42" />
+      <div className="absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,#8A641E,#C4912F,#F2D36A,#C4912F,transparent)] opacity-95" />
+      <div className="absolute -right-24 -top-24 size-56 rounded-full bg-steel-bright/18 blur-3xl transition-opacity duration-500 group-hover:opacity-100" />
+      <div className="absolute -bottom-24 -left-24 size-48 rounded-full bg-gold/14 blur-3xl opacity-70 transition-opacity duration-500 group-hover:opacity-100" />
       <div className="absolute inset-0 rounded-[1.35rem] border border-transparent transition-colors duration-500 group-hover:border-gold/25" />
 
       <div className="relative">
@@ -132,13 +133,13 @@ function StoryModule({
           <p className="bg-[linear-gradient(180deg,#F2D36A,#C4912F_55%,#8A641E)] bg-clip-text text-xs font-semibold uppercase tracking-[0.28em] text-transparent">
             {pillar.label}
           </p>
-          <h3 className="mt-4 font-serif text-4xl leading-none text-ivory md:text-5xl">
+          <h3 className="mt-4 font-serif text-4xl leading-none text-ivory drop-shadow-[0_0_22px_rgba(66,106,140,0.18)] md:text-5xl">
             {pillar.title}
           </h3>
-          <p className="mt-6 text-xl leading-8 text-ivory">
+          <p className="mt-6 text-xl leading-8 text-[rgba(237,232,222,0.94)]">
             {pillar.headline}
           </p>
-          <p className="mt-5 text-sm leading-7 text-[rgba(237,232,222,0.68)]">
+          <p className="mt-5 text-sm leading-7 text-[rgba(237,232,222,0.74)]">
             {pillar.body}
           </p>
         </div>
@@ -159,22 +160,22 @@ function MotifPanel({
   variant: string;
 }) {
   return (
-    <div className="relative h-64 overflow-hidden rounded-2xl border border-gold/24 bg-[linear-gradient(145deg,rgba(10,10,10,0.82),rgba(26,26,26,0.72)_46%,rgba(47,69,92,0.28))] p-[1px] shadow-[0_24px_80px_rgba(0,0,0,0.38),0_0_48px_rgba(66,106,140,0.12),inset_0_1px_0_rgba(237,232,222,0.1)] transition-transform duration-500 group-hover:-translate-y-1 group-hover:border-gold/45 group-hover:shadow-[0_28px_92px_rgba(0,0,0,0.42),0_0_64px_rgba(196,145,47,0.16),0_0_54px_rgba(66,106,140,0.18),inset_0_1px_0_rgba(237,232,222,0.12)] md:h-72">
-      <div className="absolute inset-0 rounded-2xl bg-[linear-gradient(135deg,#8A641E_0%,#C4912F_18%,transparent_34%,transparent_66%,#426A8C_82%,#E0B84A_100%)] opacity-80" />
-      <div className="relative h-full overflow-hidden rounded-[calc(1rem-1px)] border border-white/10 bg-[radial-gradient(circle_at_50%_18%,rgba(196,145,47,0.16),transparent_32%),radial-gradient(circle_at_82%_72%,rgba(66,106,140,0.24),transparent_38%),linear-gradient(145deg,rgba(10,10,10,0.86),rgba(26,26,26,0.72)_54%,rgba(47,69,92,0.18))]">
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(237,232,222,0.026)_1px,transparent_1px),linear-gradient(90deg,rgba(66,106,140,0.045)_1px,transparent_1px)] bg-[size:30px_30px] opacity-42" />
+    <div className="relative h-64 overflow-hidden rounded-2xl border border-gold/32 bg-[linear-gradient(145deg,rgba(10,10,10,0.9),rgba(17,17,17,0.86)_42%,rgba(47,69,92,0.36))] p-[1px] shadow-[0_24px_86px_rgba(0,0,0,0.44),0_0_58px_rgba(66,106,140,0.16),inset_0_1px_0_rgba(237,232,222,0.1)] transition-transform duration-500 group-hover:-translate-y-1 group-hover:border-gold/55 group-hover:shadow-[0_30px_96px_rgba(0,0,0,0.5),0_0_76px_rgba(196,145,47,0.22),0_0_64px_rgba(66,106,140,0.24),inset_0_1px_0_rgba(237,232,222,0.12)] md:h-72">
+      <div className="absolute inset-0 rounded-2xl bg-[linear-gradient(135deg,#8A641E_0%,#C4912F_18%,#F2D36A_28%,transparent_42%,transparent_64%,#426A8C_80%,#E0B84A_100%)] opacity-90" />
+      <div className="relative h-full overflow-hidden rounded-[calc(1rem-1px)] border border-gold/12 bg-[radial-gradient(circle_at_50%_16%,rgba(196,145,47,0.2),transparent_30%),radial-gradient(circle_at_82%_72%,rgba(66,106,140,0.3),transparent_36%),linear-gradient(145deg,rgba(10,10,10,0.92),rgba(17,17,17,0.82)_52%,rgba(47,69,92,0.24))]">
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(66,106,140,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(196,145,47,0.04)_1px,transparent_1px)] bg-[size:30px_30px] opacity-44" />
       <motion.div
         animate={{ opacity: [0.22, 0.48, 0.22], scale: [0.98, 1.04, 0.98] }}
         transition={{ duration: 6.2, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute inset-4 rounded-full bg-[radial-gradient(circle,rgba(66,106,140,0.28),rgba(196,145,47,0.12)_42%,transparent_72%)] blur-2xl"
+        className="absolute inset-4 rounded-full bg-[radial-gradient(circle,rgba(66,106,140,0.34),rgba(196,145,47,0.16)_42%,transparent_72%)] blur-2xl"
       />
-      <div className="absolute inset-4 rounded-xl border border-gold/18 bg-obsidian/22 shadow-[inset_0_1px_0_rgba(237,232,222,0.08),inset_0_0_48px_rgba(66,106,140,0.1)]" />
+      <div className="absolute inset-4 rounded-xl border border-gold/24 bg-obsidian/24 shadow-[inset_0_1px_0_rgba(237,232,222,0.08),inset_0_0_52px_rgba(66,106,140,0.14)]" />
       <Image
         src={image}
         alt={alt}
         fill
         sizes="(min-width: 1024px) 30vw, (min-width: 768px) 70vw, 90vw"
-        className="relative z-10 object-contain p-5 drop-shadow-[0_20px_34px_rgba(0,0,0,0.38)] transition duration-500 group-hover:scale-[1.025] group-hover:drop-shadow-[0_24px_42px_rgba(196,145,47,0.18)]"
+        className="relative z-10 object-contain p-1.5 drop-shadow-[0_22px_36px_rgba(0,0,0,0.42)] transition duration-500 group-hover:scale-[1.025] group-hover:drop-shadow-[0_26px_46px_rgba(196,145,47,0.22)]"
         priority={variant === "story"}
       />
       <div className="absolute inset-x-5 top-0 z-20 h-px bg-gradient-to-r from-transparent via-gold-bright/70 to-transparent" />
@@ -184,7 +185,7 @@ function MotifPanel({
       <span className="absolute right-4 top-4 z-20 h-5 w-5 border-r border-t border-gold/45" />
       <span className="absolute bottom-4 left-4 z-20 h-5 w-5 border-b border-l border-steel-bright/38" />
       <span className="absolute bottom-4 right-4 z-20 h-5 w-5 border-b border-r border-steel-bright/38" />
-      <span className="absolute bottom-5 left-5 z-20 bg-obsidian/56 px-3 py-1 text-[0.58rem] font-semibold uppercase tracking-[0.22em] text-gold backdrop-blur-md">
+      <span className="absolute bottom-5 left-5 z-20 border border-gold/18 bg-obsidian/68 px-3 py-1 text-[0.58rem] font-semibold uppercase tracking-[0.22em] text-gold-bright shadow-[0_0_22px_rgba(196,145,47,0.12)] backdrop-blur-md">
         {title}
       </span>
       <motion.div
@@ -204,9 +205,9 @@ function ManifestoPanel() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-90px" }}
       transition={{ duration: 0.78, ease: [0.22, 1, 0.36, 1] }}
-      className="relative mx-auto mt-16 max-w-5xl overflow-hidden rounded-[1.5rem] border border-gold/25 bg-[linear-gradient(145deg,rgba(26,26,26,0.88),rgba(10,10,10,0.76)_54%,rgba(47,69,92,0.2))] p-7 text-center shadow-[0_34px_130px_rgba(0,0,0,0.44),0_0_80px_rgba(66,106,140,0.12),inset_0_1px_0_rgba(237,232,222,0.08)] backdrop-blur-md md:p-12"
+      className="relative mx-auto mt-16 max-w-5xl overflow-hidden rounded-[1.5rem] border border-gold/32 bg-[linear-gradient(145deg,rgba(17,17,17,0.94),rgba(10,10,10,0.88)_52%,rgba(47,69,92,0.26))] p-7 text-center shadow-[0_36px_140px_rgba(0,0,0,0.52),0_0_90px_rgba(66,106,140,0.16),inset_0_1px_0_rgba(237,232,222,0.08)] backdrop-blur-md md:p-12"
     >
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_24%,rgba(196,145,47,0.12),transparent_38%),radial-gradient(circle_at_50%_76%,rgba(66,106,140,0.18),transparent_42%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_24%,rgba(196,145,47,0.16),transparent_38%),radial-gradient(circle_at_50%_76%,rgba(66,106,140,0.24),transparent_42%)]" />
       <div className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-gold-bright/70 to-transparent" />
       <div className="absolute inset-x-12 bottom-0 h-px bg-gradient-to-r from-transparent via-steel-bright/55 to-transparent" />
       <motion.div

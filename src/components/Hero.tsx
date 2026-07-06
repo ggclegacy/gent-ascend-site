@@ -34,30 +34,30 @@ const operatingNodes: OperatingNodeConfig[] = [
   {
     label: "Origin",
     icon: "origin",
-    path: "M 50 50 L 50 26",
-    pulse: { cx: [50, 50, 50, 50], cy: [50, 44, 26, 26] },
-    className: "left-1/2 top-[4%] -translate-x-1/2",
+    path: "M 50 31 L 50 13",
+    pulse: { cx: [50, 50, 50, 50], cy: [31, 24, 13, 13] },
+    className: "left-1/2 top-0 -translate-x-1/2",
   },
   {
     label: "Authority",
     icon: "authority",
-    path: "M 50 50 L 77 50",
-    pulse: { cx: [50, 58, 77, 77], cy: [50, 50, 50, 50] },
-    className: "right-[1%] top-1/2 -translate-y-1/2",
+    path: "M 69 50 L 91 50",
+    pulse: { cx: [69, 78, 91, 91], cy: [50, 50, 50, 50] },
+    className: "right-0 top-1/2 -translate-y-1/2",
   },
   {
     label: "Intelligence",
     icon: "intelligence",
-    path: "M 50 50 L 23 50",
-    pulse: { cx: [50, 42, 23, 23], cy: [50, 50, 50, 50] },
-    className: "left-[1%] top-1/2 -translate-y-1/2",
+    path: "M 31 50 L 9 50",
+    pulse: { cx: [31, 22, 9, 9], cy: [50, 50, 50, 50] },
+    className: "left-0 top-1/2 -translate-y-1/2",
   },
   {
     label: "Infrastructure",
     icon: "infrastructure",
-    path: "M 50 50 L 50 74",
-    pulse: { cx: [50, 50, 50, 50], cy: [50, 56, 74, 74] },
-    className: "bottom-[4%] left-1/2 -translate-x-1/2",
+    path: "M 50 69 L 50 87",
+    pulse: { cx: [50, 50, 50, 50], cy: [69, 76, 87, 87] },
+    className: "bottom-0 left-1/2 w-[7.35rem] -translate-x-1/2 sm:w-40",
   },
 ];
 
@@ -97,13 +97,41 @@ export function Hero() {
           transition={{ duration: 0.85, delay: 0.22, ease: [0.22, 1, 0.36, 1] }}
           className="mt-10 max-w-5xl"
         >
-          <h1 className="font-serif text-[clamp(3rem,8vw,6.75rem)] uppercase leading-[0.86] tracking-[0.13em] text-ivory">
-            <span className="block bg-[linear-gradient(180deg,#F2D36A_0%,#E0B84A_24%,#C4912F_54%,#8A641E_100%)] bg-clip-text text-transparent drop-shadow-[0_0_28px_rgba(196,145,47,0.28)]">
-              Gent Ascend
-            </span>
-            <span className="mt-2 block text-ivory drop-shadow-[0_0_24px_rgba(66,106,140,0.16)]">
-              Collective
-            </span>
+          <h1
+            className="font-serif text-[clamp(3rem,8vw,6.75rem)] uppercase leading-[0.86] tracking-[0.13em]"
+            aria-label="Gent Ascend Collective"
+          >
+            {["Gent Ascend", "Collective"].map((line, index) => (
+              <span
+                key={line}
+                className={`relative block bg-[linear-gradient(180deg,#F2D36A_0%,#E0B84A_24%,#C4912F_56%,#8A641E_100%)] bg-clip-text text-transparent drop-shadow-[0_0_28px_rgba(196,145,47,0.3)] ${
+                  index === 1 ? "mt-2" : ""
+                }`}
+              >
+                <span>{line}</span>
+                <motion.span
+                  aria-hidden="true"
+                  className="pointer-events-none absolute inset-0 bg-[linear-gradient(105deg,transparent_0%,transparent_28%,rgba(255,248,213,0.96)_42%,#F2D36A_49%,rgba(224,184,74,0.82)_56%,transparent_72%,transparent_100%)] bg-[length:260%_100%] bg-clip-text text-transparent drop-shadow-[0_0_34px_rgba(242,211,106,0.42)]"
+                  animate={{
+                    backgroundPosition: ["160% 50%", "-80% 50%", "160% 50%"],
+                    opacity: [0, 0.92, 0],
+                    filter: [
+                      "drop-shadow(0 0 12px rgba(196,145,47,0.2))",
+                      "drop-shadow(0 0 34px rgba(242,211,106,0.5))",
+                      "drop-shadow(0 0 12px rgba(196,145,47,0.2))",
+                    ],
+                  }}
+                  transition={{
+                    duration: 6.8,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: index * 0.42,
+                  }}
+                >
+                  {line}
+                </motion.span>
+              </span>
+            ))}
           </h1>
           <p className="mx-auto mt-8 max-w-4xl font-serif text-[clamp(2rem,6.8vw,3.5rem)] leading-tight text-ivory drop-shadow-[0_0_24px_rgba(196,145,47,0.08)]">
             Built for Businesses With Roots, Reputation, and Room to Ascend.
@@ -224,7 +252,7 @@ function HeroMedallion() {
       initial={{ opacity: 0, scale: 0.9 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 1.05, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
-      className="relative aspect-square w-full max-w-[760px]"
+      className="relative aspect-square w-full max-w-[840px]"
       aria-label="Gent Ascend Collective emblem"
     >
       <div className="absolute inset-[3%] rounded-full border border-white/[0.04] bg-[linear-gradient(rgba(237,232,222,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(237,232,222,0.022)_1px,transparent_1px)] bg-[size:36px_36px] opacity-75 [mask-image:radial-gradient(circle,black_0%,black_52%,transparent_76%)]" />
@@ -234,14 +262,14 @@ function HeroMedallion() {
       <div className="absolute inset-[25%] rounded-full border border-white/[0.045]" />
 
       <motion.div
-        animate={{ opacity: [0.28, 0.64, 0.28], scale: [0.96, 1.04, 0.96] }}
+        animate={{ opacity: [0.34, 0.72, 0.34], scale: [0.95, 1.055, 0.95] }}
         transition={{ duration: 6.4, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute inset-[2%] rounded-full bg-[radial-gradient(circle,rgba(242,211,106,0.15)_0%,rgba(196,145,47,0.17)_24%,rgba(66,106,140,0.18)_49%,transparent_72%)] blur-3xl"
+        className="absolute inset-[4%] rounded-full bg-[radial-gradient(circle,rgba(242,211,106,0.22)_0%,rgba(224,184,74,0.18)_18%,rgba(196,145,47,0.16)_34%,rgba(66,106,140,0.16)_57%,transparent_76%)] blur-3xl"
       />
       <motion.div
-        animate={{ opacity: [0.24, 0.74, 0.24], scale: [0.94, 1.05, 0.94] }}
+        animate={{ opacity: [0.28, 0.82, 0.28], scale: [0.93, 1.06, 0.93] }}
         transition={{ duration: 5.8, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute inset-[19%] rounded-full bg-[radial-gradient(circle,rgba(242,211,106,0.28)_0%,rgba(224,184,74,0.24)_26%,rgba(196,145,47,0.1)_48%,transparent_70%)] blur-2xl"
+        className="absolute inset-[24%] sm:inset-[19%] rounded-full bg-[radial-gradient(circle,rgba(242,211,106,0.34)_0%,rgba(224,184,74,0.28)_22%,rgba(196,145,47,0.14)_48%,transparent_72%)] blur-2xl"
       />
       <motion.div
         animate={{ opacity: [0.12, 0.34, 0.12], scale: [0.98, 1.07, 0.98] }}
@@ -249,13 +277,22 @@ function HeroMedallion() {
         className="absolute inset-[10%] rounded-full bg-[radial-gradient(circle,rgba(66,106,140,0.22),transparent_58%)] blur-2xl"
       />
 
-      <div className="absolute inset-[12%] rounded-full border border-white/[0.08] bg-[radial-gradient(circle_at_50%_35%,rgba(237,232,222,0.05),transparent_24%),linear-gradient(145deg,rgba(26,26,26,0.66),rgba(10,10,10,0.5)_58%,rgba(47,69,92,0.16))] shadow-[0_56px_150px_rgba(0,0,0,0.62),inset_0_1px_0_rgba(237,232,222,0.08),inset_0_-1px_0_rgba(196,145,47,0.14),inset_0_0_86px_rgba(66,106,140,0.12)] backdrop-blur-md" />
-      <div className="absolute inset-[17%] rounded-full border border-gold/18 bg-[conic-gradient(from_40deg,transparent_0deg,rgba(196,145,47,0.2)_18deg,transparent_42deg,transparent_142deg,rgba(66,106,140,0.2)_174deg,transparent_206deg,transparent_308deg,rgba(224,184,74,0.16)_326deg,transparent_360deg)] opacity-65" />
+      <div className="absolute inset-[16%] sm:inset-[12%] rounded-full border border-white/[0.08] bg-[radial-gradient(circle_at_50%_35%,rgba(237,232,222,0.055),transparent_24%),radial-gradient(circle_at_50%_50%,rgba(196,145,47,0.08),transparent_52%),linear-gradient(145deg,rgba(26,26,26,0.68),rgba(10,10,10,0.54)_58%,rgba(47,69,92,0.18))] shadow-[0_62px_170px_rgba(0,0,0,0.66),inset_0_1px_0_rgba(237,232,222,0.08),inset_0_-1px_0_rgba(196,145,47,0.18),inset_0_0_96px_rgba(66,106,140,0.13)] backdrop-blur-md" />
+      <div className="absolute inset-[17%] rounded-full border border-gold/20 bg-[conic-gradient(from_40deg,transparent_0deg,rgba(242,211,106,0.18)_12deg,rgba(196,145,47,0.34)_24deg,transparent_46deg,transparent_128deg,rgba(66,106,140,0.24)_156deg,transparent_190deg,transparent_296deg,rgba(224,184,74,0.25)_322deg,transparent_360deg)] opacity-75" />
+
+      <motion.div
+        aria-hidden="true"
+        animate={{ rotate: [0, 360], opacity: [0.34, 0.72, 0.34] }}
+        transition={{ rotate: { duration: 36, repeat: Infinity, ease: "linear" }, opacity: { duration: 8.2, repeat: Infinity, ease: "easeInOut" } }}
+        className="absolute inset-[10%] sm:inset-[6%] rounded-full bg-[conic-gradient(from_0deg,transparent_0deg,transparent_64deg,rgba(242,211,106,0.64)_78deg,rgba(196,145,47,0.34)_92deg,transparent_110deg,transparent_360deg)] p-px [mask:linear-gradient(#000_0_0)_content-box,linear-gradient(#000_0_0)] [mask-composite:exclude]"
+      />
+
+      <div className="absolute inset-[14%] sm:inset-[10%] rounded-full bg-[conic-gradient(from_0deg,rgba(242,211,106,0.32)_0deg,transparent_2deg,transparent_11deg,rgba(196,145,47,0.22)_13deg,transparent_15deg,transparent_30deg)] p-px opacity-55 [mask:linear-gradient(#000_0_0)_content-box,linear-gradient(#000_0_0)] [mask-composite:exclude]" />
 
       <motion.div
         animate={{ opacity: [0.5, 0.82, 0.5] }}
         transition={{ duration: 7.5, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute inset-[3%] rounded-full border border-gold/18 shadow-[0_0_42px_rgba(196,145,47,0.1)]"
+        className="absolute inset-[5%] sm:inset-[3%] rounded-full border border-gold/24 shadow-[0_0_58px_rgba(196,145,47,0.18),inset_0_0_40px_rgba(196,145,47,0.06)]"
       >
         <span className="absolute left-1/2 top-0 h-16 w-px -translate-x-1/2 bg-gradient-to-b from-gold-bright/80 to-transparent" />
         <span className="absolute bottom-0 left-1/2 h-16 w-px -translate-x-1/2 bg-gradient-to-t from-steel-bright/70 to-transparent" />
@@ -266,19 +303,19 @@ function HeroMedallion() {
       <motion.div
         animate={{ opacity: [0.32, 0.6, 0.32] }}
         transition={{ duration: 8.5, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
-        className="absolute inset-[9%] rounded-full border border-dashed border-steel-bright/28 shadow-[0_0_40px_rgba(66,106,140,0.12)]"
+        className="absolute inset-[13%] sm:inset-[9%] rounded-full border border-dashed border-steel-bright/28 shadow-[0_0_40px_rgba(66,106,140,0.12)]"
       />
 
       <motion.div
         animate={{ opacity: [0.38, 0.76, 0.38] }}
         transition={{ duration: 6.6, repeat: Infinity, ease: "easeInOut", delay: 0.3 }}
-        className="absolute inset-[7%] rounded-full bg-[conic-gradient(from_180deg,transparent_0deg,transparent_28deg,rgba(224,184,74,0.78)_34deg,rgba(196,145,47,0.45)_44deg,transparent_55deg,transparent_166deg,rgba(66,106,140,0.72)_178deg,transparent_194deg,transparent_360deg)] p-px [mask:linear-gradient(#000_0_0)_content-box,linear-gradient(#000_0_0)] [mask-composite:exclude]"
+        className="absolute inset-[11%] sm:inset-[7%] rounded-full bg-[conic-gradient(from_180deg,transparent_0deg,transparent_28deg,rgba(242,211,106,0.82)_34deg,rgba(196,145,47,0.48)_44deg,transparent_58deg,transparent_166deg,rgba(66,106,140,0.58)_178deg,transparent_198deg,transparent_308deg,rgba(224,184,74,0.46)_326deg,transparent_360deg)] p-px [mask:linear-gradient(#000_0_0)_content-box,linear-gradient(#000_0_0)] [mask-composite:exclude]"
       />
 
       <motion.div
         animate={{ opacity: [0.34, 0.68, 0.34] }}
         transition={{ duration: 7.2, repeat: Infinity, ease: "easeInOut", delay: 1.1 }}
-        className="absolute inset-[20%] rounded-full bg-[conic-gradient(from_10deg,transparent_0deg,rgba(66,106,140,0.64)_24deg,transparent_46deg,transparent_214deg,rgba(224,184,74,0.72)_236deg,transparent_258deg,transparent_360deg)] p-px [mask:linear-gradient(#000_0_0)_content-box,linear-gradient(#000_0_0)] [mask-composite:exclude]"
+        className="absolute inset-[24%] sm:inset-[20%] rounded-full bg-[conic-gradient(from_10deg,transparent_0deg,rgba(66,106,140,0.58)_24deg,transparent_46deg,transparent_214deg,rgba(224,184,74,0.76)_236deg,transparent_258deg,transparent_360deg)] p-px [mask:linear-gradient(#000_0_0)_content-box,linear-gradient(#000_0_0)] [mask-composite:exclude]"
       />
 
       <motion.div
@@ -292,15 +329,15 @@ function HeroMedallion() {
         <span className="absolute right-0 top-1/2 h-px w-24 -translate-y-1/2 bg-gradient-to-r from-transparent via-steel-bright/75 to-transparent" />
       </motion.div>
 
-      <div className="absolute inset-[12%] rounded-full">
-        {Array.from({ length: 48 }).map((_, index) => (
+      <div className="absolute inset-[14%] sm:inset-[12%] rounded-full">
+        {Array.from({ length: 72 }).map((_, index) => (
           <span
             key={index}
-            className="absolute left-1/2 top-1/2 h-2 w-px bg-ivory/10"
+            className="absolute left-1/2 top-1/2 h-2 w-px bg-ivory/10 odd:h-3 odd:bg-gold/16"
             style={{
               transform: `translate(-50%, -50%) rotate(${
-                index * 7.5
-              }deg) translateY(calc(-1 * min(36vw, 276px)))`,
+                index * 5
+              }deg) translateY(calc(-1 * min(35vw, 300px)))`,
             }}
           />
         ))}
@@ -309,10 +346,14 @@ function HeroMedallion() {
       <motion.div
         animate={{ opacity: [0.24, 0.52, 0.24], scale: [0.99, 1.025, 0.99] }}
         transition={{ duration: 6.8, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute inset-[22%] rounded-full border border-steel-bright/25 bg-steel/10 shadow-[0_0_54px_rgba(66,106,140,0.16)]"
+        className="absolute inset-[26%] sm:inset-[22%] rounded-full border border-steel-bright/25 bg-steel/10 shadow-[0_0_54px_rgba(66,106,140,0.16)]"
       />
-      <div className="absolute inset-[21%] rounded-full border border-white/10 bg-[linear-gradient(145deg,rgba(26,26,26,0.68),rgba(10,10,10,0.8))] shadow-[inset_0_0_92px_rgba(0,0,0,0.68),inset_0_1px_0_rgba(237,232,222,0.08)] backdrop-blur-sm" />
-      <div className="absolute inset-[22.5%] rounded-full border border-gold/30 bg-[radial-gradient(circle_at_50%_34%,rgba(66,106,140,0.14),rgba(10,10,10,0.86)_58%)] shadow-[0_0_120px_rgba(196,145,47,0.22),inset_0_0_82px_rgba(66,106,140,0.15),inset_0_1px_0_rgba(224,184,74,0.14)]" />
+      <div className="absolute inset-[25%] sm:inset-[21%] rounded-full border border-white/10 bg-[linear-gradient(145deg,rgba(26,26,26,0.68),rgba(10,10,10,0.8))] shadow-[inset_0_0_92px_rgba(0,0,0,0.68),inset_0_1px_0_rgba(237,232,222,0.08)] backdrop-blur-sm" />
+      <motion.div
+        animate={{ opacity: [0.72, 1, 0.72], scale: [1, 1.025, 1] }}
+        transition={{ duration: 5.9, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute inset-[27%] sm:inset-[22.5%] rounded-full border border-gold/35 bg-[radial-gradient(circle_at_50%_34%,rgba(242,211,106,0.08),rgba(66,106,140,0.15)_34%,rgba(10,10,10,0.88)_62%)] shadow-[0_0_138px_rgba(196,145,47,0.28),inset_0_0_88px_rgba(66,106,140,0.16),inset_0_1px_0_rgba(224,184,74,0.18)]"
+      />
 
       <motion.div
         animate={{
@@ -324,7 +365,7 @@ function HeroMedallion() {
           ],
         }}
         transition={{ duration: 5.9, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute inset-[20%] z-20 grid place-items-center"
+        className="absolute inset-[29%] z-20 grid place-items-center sm:inset-[22%]"
       >
         <Image
           src="/heroicon.png"
@@ -336,7 +377,7 @@ function HeroMedallion() {
         />
       </motion.div>
 
-      <div className="absolute inset-[22.5%] z-20 overflow-hidden rounded-full">
+      <div className="absolute inset-[27%] z-20 overflow-hidden rounded-full sm:inset-[22.5%]">
         <motion.span
           animate={{ x: ["-145%", "145%"] }}
           transition={{ duration: 9.4, repeat: Infinity, ease: "easeInOut" }}
@@ -386,40 +427,40 @@ function SignalPath({
         d={node.path}
         fill="none"
         pathLength={1}
-        stroke="rgba(66,106,140,0.26)"
+        stroke="rgba(66,106,140,0.32)"
         strokeLinecap="round"
-        strokeWidth={0.28}
+        strokeWidth={0.32}
       />
       <path
         d={node.path}
         fill="none"
         pathLength={1}
-        stroke="rgba(196,145,47,0.28)"
-        strokeDasharray="0.035 0.055"
+        stroke="rgba(196,145,47,0.34)"
+        strokeDasharray="0.032 0.06"
         strokeLinecap="round"
-        strokeWidth={0.18}
+        strokeWidth={0.2}
       />
       <motion.path
         d={node.path}
         fill="none"
         pathLength={1}
-        stroke="rgba(224,184,74,0.92)"
+        stroke="rgba(242,211,106,0.92)"
         strokeLinecap="round"
-        strokeWidth={0.42}
+        strokeWidth={0.36}
         filter="url(#gold-signal-bloom)"
         initial={{ pathLength: 0, opacity: 0 }}
-        animate={{ pathLength: [0, 0.92, 1, 1], opacity: [0, 0.95, 0.6, 0] }}
+        animate={{ pathLength: [0, 0.86, 1, 1], opacity: [0, 0.95, 0.58, 0] }}
         transition={{
           duration: activationDuration,
           repeat: Infinity,
           repeatDelay,
           delay,
           ease: "easeInOut",
-          times: [0, 0.42, 0.68, 1],
+          times: [0, 0.48, 0.72, 1],
         }}
       />
       <motion.circle
-        r="0.95"
+        r="0.78"
         fill="#F2D36A"
         filter="url(#gold-signal-bloom)"
         initial={{ opacity: 0, cx: node.pulse.cx[0], cy: node.pulse.cy[0] }}
@@ -434,7 +475,25 @@ function SignalPath({
           repeatDelay,
           delay,
           ease: "easeInOut",
-          times: [0, 0.22, 0.72, 1],
+          times: [0, 0.24, 0.78, 1],
+        }}
+      />
+      <motion.circle
+        r="1.55"
+        fill="rgba(66,106,140,0.22)"
+        initial={{ opacity: 0, cx: node.pulse.cx[0], cy: node.pulse.cy[0] }}
+        animate={{
+          cx: node.pulse.cx,
+          cy: node.pulse.cy,
+          opacity: [0, 0.42, 0.18, 0],
+        }}
+        transition={{
+          duration: activationDuration,
+          repeat: Infinity,
+          repeatDelay,
+          delay,
+          ease: "easeInOut",
+          times: [0, 0.24, 0.78, 1],
         }}
       />
     </g>
@@ -454,12 +513,16 @@ function OperatingNode({
   return (
     <motion.a
       href="#framework"
-      whileHover={{ scale: 1.025 }}
       animate={{
         borderColor: [
           "rgba(196,145,47,0.32)",
           "rgba(242,211,106,0.88)",
           "rgba(196,145,47,0.32)",
+        ],
+        background: [
+          "linear-gradient(145deg,rgba(242,211,106,0.12),rgba(17,17,17,0.92) 28%,rgba(10,10,10,0.86) 62%,rgba(47,69,92,0.24))",
+          "linear-gradient(145deg,rgba(242,211,106,0.2),rgba(17,17,17,0.9) 25%,rgba(10,10,10,0.82) 58%,rgba(66,106,140,0.3))",
+          "linear-gradient(145deg,rgba(242,211,106,0.12),rgba(17,17,17,0.92) 28%,rgba(10,10,10,0.86) 62%,rgba(47,69,92,0.24))",
         ],
         color: [
           "rgba(66,106,140,0.86)",
@@ -467,9 +530,9 @@ function OperatingNode({
           "rgba(66,106,140,0.86)",
         ],
         boxShadow: [
-          "inset 0 1px 0 rgba(237,232,222,0.12), inset 0 -10px 22px rgba(10,10,10,0.28), 0 18px 40px rgba(0,0,0,0.32), 0 0 22px rgba(196,145,47,0.1)",
-          "inset 0 1px 0 rgba(255,255,255,0.22), inset 0 -10px 24px rgba(10,10,10,0.18), 0 22px 56px rgba(0,0,0,0.36), 0 0 42px rgba(224,184,74,0.34), 0 0 34px rgba(66,106,140,0.24)",
-          "inset 0 1px 0 rgba(237,232,222,0.12), inset 0 -10px 22px rgba(10,10,10,0.28), 0 18px 40px rgba(0,0,0,0.32), 0 0 22px rgba(196,145,47,0.1)",
+          "inset 0 1px 0 rgba(237,232,222,0.12), inset 0 -12px 24px rgba(10,10,10,0.38), inset 0 0 24px rgba(66,106,140,0.08), 0 18px 42px rgba(0,0,0,0.34), 0 0 22px rgba(196,145,47,0.1)",
+          "inset 0 1px 0 rgba(255,255,255,0.24), inset 0 -12px 24px rgba(10,10,10,0.2), inset 0 0 34px rgba(66,106,140,0.18), 0 24px 62px rgba(0,0,0,0.42), 0 0 46px rgba(224,184,74,0.34), 0 0 36px rgba(66,106,140,0.24)",
+          "inset 0 1px 0 rgba(237,232,222,0.12), inset 0 -12px 24px rgba(10,10,10,0.38), inset 0 0 24px rgba(66,106,140,0.08), 0 18px 42px rgba(0,0,0,0.34), 0 0 22px rgba(196,145,47,0.1)",
         ],
       }}
       transition={{
@@ -478,13 +541,13 @@ function OperatingNode({
         repeatDelay,
         delay,
         ease: "easeInOut",
-        times: [0, 0.62, 1],
+        times: [0, 0.58, 1],
       }}
-      className={`group absolute z-30 flex h-[3.15rem] w-[7.05rem] items-center gap-2 border bg-[linear-gradient(145deg,rgba(224,184,74,0.11),rgba(17,17,17,0.88)_30%,rgba(10,10,10,0.82)_64%,rgba(47,69,92,0.2))] px-2.5 text-[0.51rem] font-semibold uppercase tracking-[0.14em] text-steel-bright backdrop-blur-md [clip-path:polygon(10%_0,90%_0,100%_28%,100%_72%,90%_100%,10%_100%,0_72%,0_28%)] sm:h-[4.15rem] sm:w-40 sm:gap-3 sm:px-4 sm:text-xs ${node.className}`}
+      className={`group absolute z-30 flex h-[2.85rem] w-[6.15rem] items-center gap-1.5 border bg-[linear-gradient(145deg,rgba(242,211,106,0.12),rgba(17,17,17,0.92)_28%,rgba(10,10,10,0.86)_62%,rgba(47,69,92,0.24))] px-2 text-[0.43rem] font-semibold uppercase tracking-[0.08em] text-steel-bright backdrop-blur-md [clip-path:polygon(10%_0,90%_0,100%_28%,100%_72%,90%_100%,10%_100%,0_72%,0_28%)] sm:h-[4.05rem] sm:w-40 sm:gap-3 sm:px-4 sm:text-xs sm:tracking-[0.14em] ${node.className}`}
     >
       <motion.span
         aria-hidden="true"
-        animate={{ opacity: [0.08, 0.28, 0.08], x: ["-120%", "135%", "135%"] }}
+        animate={{ opacity: [0.06, 0.34, 0.06], x: ["-120%", "135%", "135%"] }}
         transition={{
           duration: activationDuration,
           repeat: Infinity,
@@ -494,9 +557,10 @@ function OperatingNode({
         }}
         className="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-transparent via-white/18 to-transparent"
       />
-      <span className="absolute inset-x-4 top-1 h-px bg-gradient-to-r from-transparent via-gold/50 to-transparent" />
-      <span className="absolute inset-x-5 bottom-1 h-px bg-gradient-to-r from-transparent via-steel-bright/28 to-transparent" />
-      <span className="relative grid size-6 shrink-0 place-items-center rounded-full border border-gold/30 bg-obsidian/70 shadow-[inset_0_1px_0_rgba(237,232,222,0.08),0_0_16px_rgba(196,145,47,0.12)] sm:size-8">
+      <span className="absolute inset-x-3 top-1 h-px bg-gradient-to-r from-transparent via-[#F2D36A]/62 to-transparent" />
+      <span className="absolute inset-x-4 bottom-1 h-px bg-gradient-to-r from-transparent via-steel-bright/32 to-transparent" />
+      <span className="absolute inset-1 border border-white/[0.045] [clip-path:polygon(9%_0,91%_0,100%_28%,100%_72%,91%_100%,9%_100%,0_72%,0_28%)]" />
+      <span className="relative grid size-5 shrink-0 place-items-center rounded-full border border-gold/35 bg-obsidian/75 shadow-[inset_0_1px_0_rgba(237,232,222,0.1),0_0_18px_rgba(196,145,47,0.14),0_0_16px_rgba(66,106,140,0.08)] sm:size-8">
         <OperatingIcon icon={node.icon} />
       </span>
       <span className="relative min-w-0 leading-none">{node.label}</span>

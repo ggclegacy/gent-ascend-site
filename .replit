@@ -9,3 +9,14 @@ run = ["sh", "-c", "npm run build && npm run start"]
 [[ports]]
 localPort = 3000
 externalPort = 80
+
+[[ports]]
+localPort = 8080
+externalPort = 8080
+
+[[ports]]
+localPort = 25334
+externalPort = 3000
+
+[agent]
+expertMode = true

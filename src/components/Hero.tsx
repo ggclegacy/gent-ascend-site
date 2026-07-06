@@ -34,30 +34,30 @@ const operatingNodes: OperatingNodeConfig[] = [
   {
     label: "Origin",
     icon: "origin",
-    path: "M 50 31 L 50 13",
-    pulse: { cx: [50, 50, 50, 50], cy: [31, 24, 13, 13] },
-    className: "left-1/2 -top-1 -translate-x-1/2 sm:-top-2",
+    path: "M 43 33 C 39 25 34 20 27 18",
+    pulse: { cx: [43, 39, 34, 27], cy: [33, 25, 20, 18] },
+    className: "left-[2%] top-[6%] sm:left-[12%] sm:top-[5%]",
   },
   {
     label: "Authority",
     icon: "authority",
-    path: "M 69 50 L 91 50",
-    pulse: { cx: [69, 78, 91, 91], cy: [50, 50, 50, 50] },
-    className: "-right-1 top-1/2 -translate-y-1/2 sm:-right-3",
+    path: "M 57 33 C 61 25 66 20 73 18",
+    pulse: { cx: [57, 61, 66, 73], cy: [33, 25, 20, 18] },
+    className: "right-[2%] top-[6%] sm:right-[12%] sm:top-[5%]",
   },
   {
     label: "Intelligence",
     icon: "intelligence",
-    path: "M 31 50 L 9 50",
-    pulse: { cx: [31, 22, 9, 9], cy: [50, 50, 50, 50] },
-    className: "-left-1 top-1/2 -translate-y-1/2 sm:-left-3",
+    path: "M 43 67 C 39 75 34 80 27 82",
+    pulse: { cx: [43, 39, 34, 27], cy: [67, 75, 80, 82] },
+    className: "bottom-[6%] left-[2%] sm:bottom-[5%] sm:left-[12%]",
   },
   {
     label: "Infrastructure",
     icon: "infrastructure",
-    path: "M 50 69 L 50 87",
-    pulse: { cx: [50, 50, 50, 50], cy: [69, 76, 87, 87] },
-    className: "bottom-0 left-1/2 w-[8.35rem] -translate-x-1/2 sm:-bottom-2 sm:w-48",
+    path: "M 57 67 C 61 75 66 80 73 82",
+    pulse: { cx: [57, 61, 66, 73], cy: [67, 75, 80, 82] },
+    className: "bottom-[6%] right-[2%] w-[8.35rem] sm:bottom-[5%] sm:right-[12%] sm:w-48",
   },
 ];
 
@@ -530,19 +530,19 @@ function OperatingNode({
           "rgba(196,145,47,0.32)",
         ],
         background: [
-          "linear-gradient(145deg,rgba(242,211,106,0.12),rgba(17,17,17,0.92) 28%,rgba(10,10,10,0.86) 62%,rgba(47,69,92,0.24))",
-          "linear-gradient(145deg,rgba(242,211,106,0.2),rgba(17,17,17,0.9) 25%,rgba(10,10,10,0.82) 58%,rgba(66,106,140,0.3))",
-          "linear-gradient(145deg,rgba(242,211,106,0.12),rgba(17,17,17,0.92) 28%,rgba(10,10,10,0.86) 62%,rgba(47,69,92,0.24))",
+          "linear-gradient(145deg,rgba(242,211,106,0.82) 0%,rgba(224,184,74,0.72) 20%,rgba(196,145,47,0.7) 50%,rgba(138,100,30,0.78) 100%)",
+          "linear-gradient(145deg,rgba(255,244,190,0.95) 0%,rgba(242,211,106,0.9) 18%,rgba(224,184,74,0.86) 46%,rgba(196,145,47,0.88) 100%)",
+          "linear-gradient(145deg,rgba(242,211,106,0.82) 0%,rgba(224,184,74,0.72) 20%,rgba(196,145,47,0.7) 50%,rgba(138,100,30,0.78) 100%)",
         ],
         color: [
-          "rgba(66,106,140,0.86)",
-          "rgba(182,212,234,0.98)",
-          "rgba(66,106,140,0.86)",
+          "rgba(47,69,92,0.94)",
+          "rgba(24,54,82,1)",
+          "rgba(47,69,92,0.94)",
         ],
         boxShadow: [
-          "inset 0 1px 0 rgba(237,232,222,0.12), inset 0 -12px 24px rgba(10,10,10,0.38), inset 0 0 24px rgba(66,106,140,0.08), 0 18px 42px rgba(0,0,0,0.34), 0 0 22px rgba(196,145,47,0.1)",
-          "inset 0 1px 0 rgba(255,255,255,0.24), inset 0 -12px 24px rgba(10,10,10,0.2), inset 0 0 34px rgba(66,106,140,0.18), 0 24px 62px rgba(0,0,0,0.42), 0 0 46px rgba(224,184,74,0.34), 0 0 36px rgba(66,106,140,0.24)",
-          "inset 0 1px 0 rgba(237,232,222,0.12), inset 0 -12px 24px rgba(10,10,10,0.38), inset 0 0 24px rgba(66,106,140,0.08), 0 18px 42px rgba(0,0,0,0.34), 0 0 22px rgba(196,145,47,0.1)",
+          "inset 0 1px 0 rgba(255,248,213,0.42), inset 0 -14px 24px rgba(52,34,8,0.34), inset 0 0 24px rgba(138,100,30,0.22), 0 18px 42px rgba(0,0,0,0.34), 0 0 22px rgba(196,145,47,0.18)",
+          "inset 0 1px 0 rgba(255,255,255,0.62), inset 0 -14px 24px rgba(52,34,8,0.22), inset 0 0 30px rgba(255,244,190,0.26), 0 24px 62px rgba(0,0,0,0.42), 0 0 58px rgba(242,211,106,0.56), 0 0 34px rgba(196,145,47,0.42)",
+          "inset 0 1px 0 rgba(255,248,213,0.42), inset 0 -14px 24px rgba(52,34,8,0.34), inset 0 0 24px rgba(138,100,30,0.22), 0 18px 42px rgba(0,0,0,0.34), 0 0 22px rgba(196,145,47,0.18)",
         ],
       }}
       transition={{
@@ -553,7 +553,7 @@ function OperatingNode({
         ease: "easeInOut",
         times: [0, 0.58, 1],
       }}
-      className={`group absolute z-30 flex h-[3.35rem] w-[7.05rem] items-center gap-2 border bg-[linear-gradient(145deg,rgba(242,211,106,0.12),rgba(17,17,17,0.92)_28%,rgba(10,10,10,0.86)_62%,rgba(47,69,92,0.24))] px-2.5 text-[0.53rem] font-semibold uppercase tracking-[0.09em] text-steel-bright backdrop-blur-md [clip-path:polygon(10%_0,90%_0,100%_28%,100%_72%,90%_100%,10%_100%,0_72%,0_28%)] sm:h-[4.85rem] sm:w-48 sm:gap-3.5 sm:px-5 sm:text-sm sm:tracking-[0.13em] ${node.className}`}
+      className={`group absolute z-30 flex h-[3.35rem] w-[7.05rem] items-center gap-2 border bg-[linear-gradient(145deg,rgba(242,211,106,0.82)_0%,rgba(224,184,74,0.72)_20%,rgba(196,145,47,0.7)_50%,rgba(138,100,30,0.78)_100%)] px-2.5 text-[0.53rem] font-semibold uppercase tracking-[0.09em] text-steel backdrop-blur-md [clip-path:polygon(10%_0,90%_0,100%_28%,100%_72%,90%_100%,10%_100%,0_72%,0_28%)] sm:h-[4.85rem] sm:w-48 sm:gap-3.5 sm:px-5 sm:text-sm sm:tracking-[0.13em] ${node.className}`}
     >
       <motion.span
         aria-hidden="true"
@@ -565,12 +565,12 @@ function OperatingNode({
           delay,
           ease: "easeInOut",
         }}
-        className="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-transparent via-white/18 to-transparent"
+        className="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-transparent via-white/32 to-transparent"
       />
       <span className="absolute inset-x-3 top-1 h-px bg-gradient-to-r from-transparent via-[#F2D36A]/62 to-transparent" />
-      <span className="absolute inset-x-4 bottom-1 h-px bg-gradient-to-r from-transparent via-steel-bright/32 to-transparent" />
-      <span className="absolute inset-1 border border-white/[0.045] [clip-path:polygon(9%_0,91%_0,100%_28%,100%_72%,91%_100%,9%_100%,0_72%,0_28%)]" />
-      <span className="relative grid size-6 shrink-0 place-items-center rounded-full border border-gold/35 bg-obsidian/75 shadow-[inset_0_1px_0_rgba(237,232,222,0.1),0_0_18px_rgba(196,145,47,0.14),0_0_16px_rgba(66,106,140,0.08)] sm:size-10">
+      <span className="absolute inset-x-4 bottom-1 h-px bg-gradient-to-r from-transparent via-steel/40 to-transparent" />
+      <span className="absolute inset-1 border border-white/[0.16] [clip-path:polygon(9%_0,91%_0,100%_28%,100%_72%,91%_100%,9%_100%,0_72%,0_28%)]" />
+      <span className="relative grid size-6 shrink-0 place-items-center rounded-full border border-steel/35 bg-[rgba(10,10,10,0.16)] shadow-[inset_0_1px_0_rgba(255,248,213,0.22),0_0_18px_rgba(196,145,47,0.2),0_0_14px_rgba(47,69,92,0.14)] sm:size-10">
         <OperatingIcon icon={node.icon} />
       </span>
       <span className="relative min-w-0 leading-none">{node.label}</span>

@@ -1,0 +1,255 @@
+You are working inside the existing project:
+
+gent-ascend-site
+
+TASK
+
+Fix and elevate ONLY the homepage hero section.
+
+The current hero is broken visually. The central hero icon/emblem is no longer centered. The four pillar orbs are scattered incorrectly, and the layout does not match the intended hero direction.
+
+Do NOT redesign the rest of the website.
+Do NOT touch sections below the hero.
+Do NOT change the company name.
+Do NOT change the core hero copy.
+Do NOT replace the uploaded hero icon image.
+Do NOT remove the four operating pillars.
+Do NOT create new pages.
+Do NOT install unnecessary dependencies.
+
+Work primarily in:
+
+src/components/Hero.tsx
+
+If needed, update:
+
+src/app/globals.css
+
+CURRENT PROBLEM
+
+The hero icon is supposed to be the visual center of the hero.
+
+Right now:
+- the central hero icon/emblem is off-center or missing from the visual center
+- the four orbs are not arranged correctly around it
+- some labels are too far away or clipped
+- the icon inside the orbs is too subtle
+- the orbs do not glow strongly enough in brand gold
+- the hero visual feels broken instead of premium
+
+REBUILD THE HERO VISUAL STRUCTURE
+
+The correct hero visual structure is:
+
+1. Center hero icon/emblem in the middle of the hero visual area
+2. Four glowing operating orbs arranged around it
+3. Thin signal lines connecting each orb to the center emblem
+4. A premium circular operating-ring background behind the emblem
+5. Gold glow and steel-blue atmosphere behind the entire core
+6. Company wordmark and copy beneath
+
+The center emblem must be the anchor.
+
+Use the uploaded hero icon image from:
+
+public/heroicon.png
+
+Do not replace it.
+Do not crop it weirdly.
+Do not distort it.
+
+CENTER EMBLEM REQUIREMENTS
+
+The central heroicon.png should:
+- be centered horizontally
+- be visually dominant
+- be large enough to feel like the hero
+- sit inside a premium circular gold operating ring
+- have a breathing gold glow behind it
+- subtly pulsate like it is alive
+- never be covered by the pillar orbs
+- never be off to the side
+
+Suggested mobile size:
+- central emblem visual around 210px–260px wide depending on viewport
+- allow CSS clamp() so it scales nicely
+
+Suggested desktop size:
+- larger, around 320px–420px depending on layout
+
+Use:
+width: clamp(220px, 38vw, 420px)
+
+or an equivalent responsive approach.
+
+FOUR OPERATING ORBS
+
+The four pillar orbs must be arranged symmetrically around the center emblem.
+
+Use these four pillars:
+
+Origin
+Authority
+Intelligence
+Infrastructure
+
+Correct placement:
+
+Origin = top of center emblem
+Authority = right of center emblem
+Intelligence = left of center emblem
+Infrastructure = bottom of center emblem
+
+This should form a clean cross/diamond around the logo.
+
+The orbs should be positioned close enough to feel connected, but far enough to not touch or overlap the central emblem.
+
+CRITICAL SPACING RULE
+
+The four orbs must NOT overlap the central logo.
+
+There should be a clear visual gap between:
+- central emblem ring
+- signal line
+- orb
+
+On mobile, use a compact but clean spacing:
+- top orb above emblem
+- left/right orbs beside emblem
+- bottom orb below emblem
+- keep all inside viewport width
+- no horizontal overflow
+- labels must not be clipped
+
+If needed, use responsive CSS variables for orb radius:
+
+--orb-distance-mobile: 145px;
+--orb-distance-desktop: 230px;
+
+Or use transform positioning from the center point.
+
+ORB STYLE
+
+Each orb should look like a premium powered operating node.
+
+The orbs should NOT look like plain circles.
+They should NOT look like empty dark buttons.
+They should NOT look weak.
+
+Each orb should have:
+- dark smoked-glass center
+- metallic gold outer ring
+- inner gold glow
+- subtle steel-blue inner halo
+- premium 3D shadow
+- breathing gold aura
+- crisp icon inside
+- label beneath or beside it
+
+Gold orb ring:
+Use a metallic gradient:
+#F2D36A → #E0B84A → #C4912F → #8A641E
+
+Orb body:
+#0A0A0A / #111111 / #1A1A1A
+
+Blue accent:
+#2F455C / #426A8C
+
+ICON INSIDE ORBS
+
+The icons inside each orb need to be much more prominent.
+
+Current problem:
+The icons are too small/subtle.
+
+Fix:
+- increase icon size
+- increase icon contrast
+- make icons gold with a slight blue glow
+- make them crisp and readable
+- center them perfectly inside the orb
+
+Icon size guidance:
+- mobile: 22px–28px
+- desktop: 28px–36px
+
+Icon color:
+Use gold:
+#E0B84A or gradient-like treatment if possible
+
+Add subtle glow:
+text-shadow or drop-shadow using rgba(224,184,74,0.45)
+
+Do not make icons blue-only.
+Blue should be an accent, not the main icon color.
+
+ORB LABELS
+
+Each label should be close to its orb and readable.
+
+Labels:
+ORIGIN
+AUTHORITY
+INTELLIGENCE
+INFRASTRUCTURE
+
+Style:
+- uppercase
+- letter-spaced
+- warm ivory or brand steel-blue with gold accent
+- small but readable
+- not clipped
+- not too far from orb
+
+Recommended:
+- label color: #EDE8DE or #426A8C
+- active label glow: #E0B84A
+- letter spacing: 0.18em
+
+SIGNAL LINES
+
+Create thin signal lines from the central emblem ring to each orb.
+
+These lines should:
+- start at the outer edge of the central operating ring
+- end at the orb
+- be visible but elegant
+- gold dominant with subtle steel-blue support
+- not be too thin to see
+- not be thick wires
+- not cross awkwardly
+
+Add sequential pulse animation:
+Origin → Authority → Intelligence → Infrastructure
+
+When a signal activates:
+- a gold pulse travels from the center emblem to the orb
+- the corresponding orb glows brighter
+- the label brightens
+- the icon becomes more luminous
+- then it settles back down
+
+Timing:
+- full loop around 8–10 seconds
+- each node active for around 1.5–2 seconds
+- center emblem keeps breathing throughout
+
+OPERATING RING BACKGROUND
+
+Behind the central emblem, rebuild a premium circular operating ring.
+
+It should look:
+- luxury
+- gold-dominant
+- advanced
+- engineered
+- futuristic
+- alive
+
+Add:
+- concentric circular rings
+- segmented gold arcs
+- faint steel-blue arcs
+- subtle tick marks
+- slow gold

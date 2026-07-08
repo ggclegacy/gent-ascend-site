@@ -162,32 +162,43 @@ function HeroStage() {
       initial={{ opacity: 0, scale: 0.96 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.95, ease: [0.22, 1, 0.36, 1] }}
-      className="hero-stage w-full max-w-[700px]"
+      className="mx-auto w-fit"
+      style={{
+        display: "grid",
+        gridTemplateColumns: "auto auto auto",
+        gridTemplateRows: "auto auto auto",
+        placeItems: "center",
+        gap: 0,
+      }}
     >
-      <div className="hero-stage__origin flex flex-col items-center">
+      {/* Row 1 — Origin sits above the emblem; connector pulse travels upward (emblem → orb) */}
+      <div />
+      <div className="flex flex-col items-center">
         <OperatingNode nodeKey="origin" />
         <VConnector delay={NODE_ORDER.indexOf("origin") * ACTIVE} reverse />
       </div>
+      <div />
 
-      <div className="hero-stage__icon">
+      {/* Row 2 — Intelligence left, emblem center, Authority right */}
+      <div className="flex items-center self-center">
+        <OperatingNode nodeKey="intelligence" />
+        <HConnector delay={NODE_ORDER.indexOf("intelligence") * ACTIVE} reverse />
+      </div>
+      <div className="self-center">
         <OperatingCore />
       </div>
-
-      <div className="hero-stage__flank">
-        <div className="hero-stage__intel flex items-center">
-          <OperatingNode nodeKey="intelligence" />
-          <HConnector delay={NODE_ORDER.indexOf("intelligence") * ACTIVE} reverse />
-        </div>
-        <div className="hero-stage__auth flex items-center">
-          <HConnector delay={NODE_ORDER.indexOf("authority") * ACTIVE} />
-          <OperatingNode nodeKey="authority" />
-        </div>
+      <div className="flex items-center self-center">
+        <HConnector delay={NODE_ORDER.indexOf("authority") * ACTIVE} />
+        <OperatingNode nodeKey="authority" />
       </div>
 
-      <div className="hero-stage__infra flex flex-col items-center">
+      {/* Row 3 — Infrastructure sits below the emblem; connector pulse travels downward (emblem → orb) */}
+      <div />
+      <div className="flex flex-col items-center">
         <VConnector delay={NODE_ORDER.indexOf("infrastructure") * ACTIVE} />
         <OperatingNode nodeKey="infrastructure" />
       </div>
+      <div />
     </motion.div>
   );
 }

@@ -69,9 +69,9 @@ const priorityOptions = [
 
 const budgetOptions = [
   "Under $500",
-  "$500-$1,500",
-  "$1,500-$3,500",
-  "$3,500-$7,500",
+  "$500–$1,500",
+  "$1,500–$3,500",
+  "$3,500–$7,500",
   "$7,500+",
   "Not sure yet",
 ];
@@ -79,7 +79,7 @@ const budgetOptions = [
 const timelineOptions = [
   "As soon as possible",
   "30 days",
-  "60-90 days",
+  "60–90 days",
   "This year",
   "Just exploring",
 ];
@@ -360,20 +360,24 @@ const steps: {
 
 const flow = [
   {
-    title: "Scan Setup",
-    body: "Prepare the website, reputation, and business profile criteria.",
+    title: "Discover",
+    body: "Story, goals, services, and current presence.",
   },
   {
-    title: "Blueprint Questions",
-    body: "Map story, goals, services, bottlenecks, and operating needs.",
+    title: "Diagnose",
+    body: "Gaps, friction points, and missed opportunities.",
   },
   {
-    title: "Blueprint Preview",
-    body: "Organize the inputs into an initial modernization direction.",
+    title: "Design",
+    body: "A recommended path across Origin, Authority, Intelligence, and Infrastructure.",
   },
   {
-    title: "Future AI Scan",
-    body: "Connect deeper website review and reputation research later.",
+    title: "Estimate",
+    body: "A practical scope and starting build direction.",
+  },
+  {
+    title: "Ascend",
+    body: "Move into the right build with clarity.",
   },
 ];
 
@@ -474,7 +478,7 @@ export function AscendBlueprintEngine() {
   return (
     <section
       id="blueprint"
-      className="relative isolate overflow-hidden px-5 py-24 md:px-8 md:py-32"
+      className="relative isolate overflow-hidden bg-obsidian px-5 py-24 md:px-8 md:py-32"
     >
       <BlueprintBackground />
 
@@ -484,7 +488,7 @@ export function AscendBlueprintEngine() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-90px" }}
           transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
-          className="relative overflow-hidden border border-gold/24 bg-[linear-gradient(145deg,rgba(17,17,17,0.88),rgba(10,10,10,0.82)_54%,rgba(47,69,92,0.2))] px-5 py-10 shadow-[0_36px_150px_rgba(0,0,0,0.52),inset_0_1px_0_rgba(237,232,222,0.08)] backdrop-blur-md md:px-10 md:py-14"
+          className="relative overflow-hidden rounded-2xl border border-gold/24 bg-[linear-gradient(145deg,rgba(17,17,17,0.9),rgba(10,10,10,0.84)_54%,rgba(47,69,92,0.22))] px-5 py-10 shadow-[0_40px_170px_rgba(0,0,0,0.58),0_0_90px_rgba(66,106,140,0.12),inset_0_1px_0_rgba(237,232,222,0.08)] backdrop-blur-md md:px-10 md:py-14"
         >
           <div className="absolute inset-0 bg-[linear-gradient(rgba(237,232,222,0.026)_1px,transparent_1px),linear-gradient(90deg,rgba(66,106,140,0.052)_1px,transparent_1px)] bg-[size:56px_56px] opacity-55" />
           <div className="absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-gold-bright to-transparent" />
@@ -508,20 +512,19 @@ export function AscendBlueprintEngine() {
               <p className="mt-6 max-w-3xl text-base leading-8 text-[rgba(237,232,222,0.76)] md:text-lg">
                 Before we build anything, we map the business behind the
                 business. The Ascend Blueprint Engine guides owners through
-                their story, website, goals, bottlenecks, and opportunities -
-                then turns that information into a clear modernization path.
+                their story, website, goals, bottlenecks, systems, customers,
+                and opportunities — then turns that information into an initial
+                modernization path.
               </p>
               <p className="mt-5 max-w-3xl text-sm leading-7 text-[rgba(237,232,222,0.62)] md:text-base">
-                If a business already has a website, the first step is entering
-                the URL. Future versions of the Blueprint Engine will scan the
-                site, review public reputation signals, and research what
-                already exists online. For now, this guided experience captures
-                the foundation and creates a structured Blueprint Preview.
+                A real business is more than a name, a logo, and a website.
+                The Blueprint Engine is designed to understand what already
+                exists, what is missing, and what needs to ascend first.
               </p>
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-                <Button href="#ascend-scan">Begin the Blueprint</Button>
-                <Button href="#blueprint-flow" variant="secondary">
-                  See How It Works
+                <Button href="#blueprint-wizard">Begin the Blueprint</Button>
+                <Button href="#ascend-scan" variant="secondary">
+                  Run an Ascend Scan
                 </Button>
               </div>
             </div>
@@ -550,9 +553,10 @@ export function AscendBlueprintEngine() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-70px" }}
               transition={{ duration: 0.55, delay: index * 0.05 }}
-              className="relative min-h-36 overflow-hidden border border-white/10 bg-carbon/62 p-5 shadow-[inset_0_1px_0_rgba(237,232,222,0.06)]"
+              className="group relative min-h-36 overflow-hidden rounded-xl border border-white/10 bg-[linear-gradient(145deg,rgba(26,26,26,0.74),rgba(10,10,10,0.7)_58%,rgba(47,69,92,0.16))] p-5 shadow-[0_18px_70px_rgba(0,0,0,0.24),inset_0_1px_0_rgba(237,232,222,0.06)] transition duration-500 hover:-translate-y-1 hover:border-gold/34"
             >
               <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold/65 to-transparent" />
+              <div className="absolute -right-12 -top-12 size-28 rounded-full bg-steel-bright/12 blur-2xl opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
               <p className="text-[0.65rem] font-semibold uppercase tracking-[0.24em] text-steel-bright">
                 {String(index + 1).padStart(2, "0")}
               </p>
@@ -567,7 +571,7 @@ export function AscendBlueprintEngine() {
         </div>
 
         <div id="blueprint-wizard" className="mt-10 grid gap-6 xl:grid-cols-[1fr_0.9fr]">
-          <div className="relative overflow-hidden border border-white/10 bg-[linear-gradient(145deg,rgba(17,17,17,0.92),rgba(10,10,10,0.82)_58%,rgba(47,69,92,0.18))] p-5 shadow-[0_30px_120px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(237,232,222,0.07)] md:p-7">
+          <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-[linear-gradient(145deg,rgba(17,17,17,0.92),rgba(10,10,10,0.82)_58%,rgba(47,69,92,0.18))] p-5 shadow-[0_30px_120px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(237,232,222,0.07)] md:p-7">
             <div className="absolute inset-0 bg-[linear-gradient(rgba(66,106,140,0.044)_1px,transparent_1px),linear-gradient(90deg,rgba(237,232,222,0.018)_1px,transparent_1px)] bg-[size:42px_42px] opacity-60" />
             <div className="absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-steel-bright to-transparent" />
             <div className="relative">
@@ -698,6 +702,7 @@ export function AscendBlueprintEngine() {
         </div>
 
         <FutureScanPanel />
+        <BlueprintFinalCTA />
       </div>
     </section>
   );
@@ -728,7 +733,7 @@ function AscendScan({
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-80px" }}
         transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
-        className="relative overflow-hidden border border-gold/24 bg-[linear-gradient(145deg,rgba(10,10,10,0.9),rgba(17,17,17,0.86)_56%,rgba(47,69,92,0.24))] p-5 shadow-[0_30px_120px_rgba(0,0,0,0.42),inset_0_1px_0_rgba(237,232,222,0.08)] md:p-7"
+        className="relative overflow-hidden rounded-2xl border border-gold/24 bg-[linear-gradient(145deg,rgba(10,10,10,0.9),rgba(17,17,17,0.86)_56%,rgba(47,69,92,0.24))] p-5 shadow-[0_30px_120px_rgba(0,0,0,0.42),inset_0_1px_0_rgba(237,232,222,0.08)] md:p-7"
       >
         <div className="absolute inset-0 bg-[linear-gradient(rgba(237,232,222,0.024)_1px,transparent_1px),linear-gradient(90deg,rgba(66,106,140,0.052)_1px,transparent_1px)] bg-[size:44px_44px] opacity-70" />
         <div className="absolute inset-x-7 top-0 h-px bg-gradient-to-r from-transparent via-gold-bright to-transparent" />
@@ -759,8 +764,8 @@ function AscendScan({
             deeper modernization plan.
           </p>
           <p className="mt-4 border-l border-steel-bright/40 pl-4 text-sm leading-7 text-steel-bright">
-            For now, this prepares the business profile and scan criteria that
-            will power the full AI-assisted Blueprint.
+            No automated website or reputation scan is performed yet. This
+            prepares the profile that future AI research will evaluate.
           </p>
 
           <div className="mt-7 grid gap-4 md:grid-cols-2">
@@ -916,7 +921,7 @@ function ScanReadinessPreview({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
-      className="relative overflow-hidden border border-steel-bright/24 bg-[linear-gradient(145deg,rgba(10,10,10,0.92),rgba(17,17,17,0.88)_54%,rgba(47,69,92,0.24))] p-5 shadow-[0_30px_120px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(237,232,222,0.08)] md:p-7"
+      className="relative overflow-hidden rounded-2xl border border-steel-bright/24 bg-[linear-gradient(145deg,rgba(10,10,10,0.92),rgba(17,17,17,0.88)_54%,rgba(47,69,92,0.24))] p-5 shadow-[0_30px_120px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(237,232,222,0.08)] md:p-7"
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_10%,rgba(66,106,140,0.24),transparent_34%),linear-gradient(rgba(237,232,222,0.022)_1px,transparent_1px),linear-gradient(90deg,rgba(66,106,140,0.044)_1px,transparent_1px)] bg-[size:auto,40px_40px,40px_40px]" />
       <div className="absolute inset-x-7 top-0 h-px bg-gradient-to-r from-transparent via-steel-bright to-transparent" />
@@ -1153,7 +1158,7 @@ function BlueprintPreview({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
-      className="relative overflow-hidden border border-gold/20 bg-[linear-gradient(145deg,rgba(10,10,10,0.92),rgba(17,17,17,0.88)_55%,rgba(47,69,92,0.2))] p-5 shadow-[0_30px_120px_rgba(0,0,0,0.42),inset_0_1px_0_rgba(237,232,222,0.08)] md:p-7"
+      className="relative overflow-hidden rounded-2xl border border-gold/20 bg-[linear-gradient(145deg,rgba(10,10,10,0.92),rgba(17,17,17,0.88)_55%,rgba(47,69,92,0.2))] p-5 shadow-[0_30px_120px_rgba(0,0,0,0.42),inset_0_1px_0_rgba(237,232,222,0.08)] md:p-7"
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_8%,rgba(66,106,140,0.22),transparent_32%),linear-gradient(rgba(237,232,222,0.022)_1px,transparent_1px),linear-gradient(90deg,rgba(66,106,140,0.04)_1px,transparent_1px)] bg-[size:auto,38px_38px,38px_38px]" />
       <div className="absolute inset-x-7 top-0 h-px bg-gradient-to-r from-transparent via-gold-bright to-transparent" />
@@ -1193,10 +1198,14 @@ function BlueprintPreview({
               Suggested Operating Layers
             </p>
             <div className="mt-4 flex flex-wrap gap-2">
-              {preview.layers.map((layer) => (
+              {["Origin", "Authority", "Intelligence", "Infrastructure"].map((layer) => (
                 <span
                   key={layer}
-                  className="border border-gold/25 bg-gold/10 px-3 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-gold-bright"
+                  className={`border px-3 py-2 text-xs font-semibold uppercase tracking-[0.14em] ${
+                    preview.layers.includes(layer)
+                      ? "border-gold/40 bg-gold/12 text-gold-bright shadow-[0_0_24px_rgba(196,145,47,0.14)]"
+                      : "border-white/10 bg-white/[0.03] text-muted"
+                  }`}
                 >
                   {layer}
                 </span>
@@ -1318,11 +1327,19 @@ function BlueprintMap() {
 }
 
 function FutureScanPanel() {
-  const futureStages = [
-    "Ascend Scan profile setup",
-    "Blueprint questions",
-    "Blueprint Preview",
-    "Future AI-powered scan / reputation research",
+  const capabilities = [
+    {
+      title: "Website Intelligence",
+      body: "Review current site clarity, service pages, mobile trust, proof, and conversion friction.",
+    },
+    {
+      title: "Reputation Signals",
+      body: "Research public reviews, praise patterns, complaints, business listings, and social proof.",
+    },
+    {
+      title: "Competitive Context",
+      body: "Understand how the company shows up against nearby competitors and where it can ascend.",
+    },
   ];
 
   return (
@@ -1331,41 +1348,84 @@ function FutureScanPanel() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
-      className="relative mt-8 overflow-hidden border border-steel-bright/24 bg-[linear-gradient(135deg,rgba(47,69,92,0.22),rgba(10,10,10,0.86)_52%,rgba(196,145,47,0.1))] p-6 shadow-[0_28px_110px_rgba(0,0,0,0.34),inset_0_1px_0_rgba(237,232,222,0.07)] md:p-8"
+      className="relative mt-8 overflow-hidden rounded-2xl border border-steel-bright/24 bg-[linear-gradient(135deg,rgba(47,69,92,0.22),rgba(10,10,10,0.86)_52%,rgba(196,145,47,0.1))] p-6 shadow-[0_28px_110px_rgba(0,0,0,0.34),inset_0_1px_0_rgba(237,232,222,0.07)] md:p-8"
     >
       <div className="absolute inset-0 bg-[linear-gradient(rgba(237,232,222,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(66,106,140,0.052)_1px,transparent_1px)] bg-[size:46px_46px]" />
       <div className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-steel-bright to-transparent" />
+      <motion.div
+        aria-hidden="true"
+        animate={{ x: ["-18%", "118%"], opacity: [0, 0.42, 0] }}
+        transition={{ duration: 8.5, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute top-0 h-full w-1/4 bg-gradient-to-r from-transparent via-steel-bright/12 to-transparent"
+      />
       <div className="relative grid gap-6 lg:grid-cols-[0.78fr_1.22fr] lg:items-center">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-steel-bright">
-            Future Intelligence Layer
+          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-gold-bright">
+            Coming Next — Not Active Yet
           </p>
-          <h3 className="mt-3 font-serif text-3xl text-ivory md:text-4xl">
-            AI-Powered Scan and Reputation Research
+          <h3 className="mt-3 font-serif text-4xl leading-tight text-ivory md:text-5xl">
+            Future Ascend Scan
           </h3>
+          <p className="mt-4 text-sm leading-7 text-[rgba(237,232,222,0.68)] md:text-base">
+            Future versions will let businesses enter a website URL so the
+            system can review the current website, identify trust gaps, map
+            customer friction points, and research public reputation signals
+            before creating a deeper Blueprint.
+          </p>
         </div>
         <div>
-          <p className="text-sm leading-7 text-[rgba(237,232,222,0.68)] md:text-base md:leading-8">
-            The Ascend Scan now prepares the business profile and evaluation
-            map. Future versions will connect live website review and public
-            reputation research so the Blueprint can move from prepared
-            criteria into deeper evidence-backed recommendations.
-          </p>
-          <div className="mt-5 grid gap-3 sm:grid-cols-2">
-            {futureStages.map((stage, index) => (
-              <div
-                key={stage}
-                className="border border-white/10 bg-obsidian/42 p-4"
+          <div className="grid gap-3 md:grid-cols-3">
+            {capabilities.map((capability, index) => (
+              <motion.div
+                key={capability.title}
+                whileHover={{ y: -4 }}
+                transition={{ duration: 0.24, ease: "easeOut" }}
+                className="relative overflow-hidden rounded-xl border border-white/10 bg-obsidian/48 p-5 shadow-[inset_0_1px_0_rgba(237,232,222,0.06)]"
               >
+                <div className="absolute inset-x-4 top-0 h-px bg-gradient-to-r from-transparent via-gold/55 to-transparent" />
                 <p className="text-[0.62rem] font-semibold uppercase tracking-[0.18em] text-gold-bright">
                   {String(index + 1).padStart(2, "0")}
                 </p>
-                <p className="mt-2 text-sm leading-6 text-[rgba(237,232,222,0.72)]">
-                  {stage}
+                <h4 className="mt-4 font-serif text-2xl leading-tight text-ivory">
+                  {capability.title}
+                </h4>
+                <p className="mt-3 text-sm leading-6 text-[rgba(237,232,222,0.7)]">
+                  {capability.body}
                 </p>
-              </div>
+              </motion.div>
             ))}
           </div>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
+function BlueprintFinalCTA() {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-80px" }}
+      transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+      className="relative mt-8 overflow-hidden rounded-2xl border border-gold/30 bg-[linear-gradient(145deg,rgba(17,17,17,0.94),rgba(10,10,10,0.88)_52%,rgba(47,69,92,0.22))] p-7 text-center shadow-[0_34px_130px_rgba(0,0,0,0.48),0_0_86px_rgba(66,106,140,0.14),inset_0_1px_0_rgba(237,232,222,0.08)] md:p-10"
+    >
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_16%,rgba(196,145,47,0.16),transparent_34%),radial-gradient(circle_at_50%_88%,rgba(66,106,140,0.24),transparent_42%)]" />
+      <div className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-gold-bright/70 to-transparent" />
+      <div className="relative">
+        <h3 className="font-serif text-3xl leading-tight text-ivory md:text-5xl">
+          Ready to Map the Business Behind the Business?
+        </h3>
+        <p className="mx-auto mt-4 max-w-2xl text-base leading-8 text-[rgba(237,232,222,0.72)]">
+          Start with the Blueprint. Build with clarity.
+        </p>
+        <div className="mt-7 flex flex-col justify-center gap-4 sm:flex-row">
+          <Button href="#blueprint-wizard" className="w-full sm:w-auto">
+            Begin the Blueprint
+          </Button>
+          <Button href="#apply" variant="secondary" className="w-full sm:w-auto">
+            Request a Build Review
+          </Button>
         </div>
       </div>
     </motion.div>
@@ -1428,10 +1488,10 @@ function createBlueprintPreview(data: BlueprintData) {
 
   const investmentByBudget: Record<string, string> = {
     "Under $500": "Starter advisory / limited scope only",
-    "$500-$1,500": "Focused foundation build or audit-led starting point",
-    "$1,500-$3,500":
+    "$500–$1,500": "Focused foundation build or audit-led starting point",
+    "$1,500–$3,500":
       "Strong first build range for website, intake, or focused infrastructure",
-    "$3,500-$7,500": "Modernization build range with deeper system work",
+    "$3,500–$7,500": "Modernization build range with deeper system work",
     "$7,500+": "Full digital ecosystem / advanced build range",
     "Not sure yet": "Requires Build Review",
   };

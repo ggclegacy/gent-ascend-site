@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 const smoothEase = [0.22, 1, 0.36, 1] as const;
+const breatheEase = [0.45, 0, 0.2, 1] as const;
 
 const pillars = [
   {
@@ -143,7 +144,11 @@ function ShowcaseCard({
         </div>
 
         <div className="order-1 lg:order-2">
-          <ImageArtifact pillar={pillar} priority={index === 0} />
+          <ImageArtifact
+            pillar={pillar}
+            priority={index === 0}
+            pulseDelay={index * 0.65}
+          />
         </div>
       </div>
     </motion.article>
@@ -153,35 +158,155 @@ function ShowcaseCard({
 function ImageArtifact({
   pillar,
   priority,
+  pulseDelay,
 }: {
   pillar: (typeof pillars)[number];
   priority: boolean;
+  pulseDelay: number;
 }) {
   return (
     <div className="relative mx-auto max-w-[560px] lg:max-w-none">
-      <div className="absolute -inset-4 rounded-[1.6rem] bg-[radial-gradient(circle_at_50%_20%,rgba(66,106,140,0.2),transparent_46%),radial-gradient(circle_at_64%_88%,rgba(196,145,47,0.13),transparent_42%)] blur-2xl transition-opacity duration-500 group-hover:opacity-100" />
+      <motion.div
+        aria-hidden="true"
+        animate={{
+          opacity: [0.46, 0.88, 0.46],
+          scale: [0.985, 1.035, 0.985],
+        }}
+        transition={{
+          duration: 5.8,
+          repeat: Infinity,
+          ease: breatheEase,
+          delay: pulseDelay,
+        }}
+        className="absolute -inset-5 rounded-[1.8rem] bg-[radial-gradient(circle_at_50%_18%,rgba(66,106,140,0.34),transparent_45%),radial-gradient(circle_at_66%_86%,rgba(196,145,47,0.2),transparent_44%)] blur-2xl transition-opacity duration-500 group-hover:opacity-100"
+      />
+      <motion.div
+        aria-hidden="true"
+        animate={{
+          opacity: [0.22, 0.58, 0.22],
+          scale: [0.95, 1.04, 0.95],
+        }}
+        transition={{
+          duration: 7.2,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: pulseDelay + 0.35,
+        }}
+        className="absolute -inset-2 rounded-[1.45rem] border border-steel-bright/24 shadow-[0_0_46px_rgba(66,106,140,0.24)]"
+      />
 
-      <div className="relative overflow-hidden rounded-[1.25rem] bg-[linear-gradient(135deg,#F2D36A_0%,#E0B84A_16%,#C4912F_34%,#8A641E_50%,rgba(66,106,140,0.76)_72%,#E0B84A_100%)] p-[1px] shadow-[0_30px_105px_rgba(0,0,0,0.56),0_0_62px_rgba(66,106,140,0.18)] transition duration-500 group-hover:-translate-y-1 group-hover:shadow-[0_38px_125px_rgba(0,0,0,0.62),0_0_80px_rgba(196,145,47,0.22),0_0_72px_rgba(66,106,140,0.26)]">
-        <div className="relative aspect-square overflow-hidden rounded-[calc(1.25rem-1px)] border border-gold/14 bg-[radial-gradient(circle_at_50%_18%,rgba(196,145,47,0.18),transparent_32%),radial-gradient(circle_at_78%_76%,rgba(66,106,140,0.32),transparent_38%),linear-gradient(145deg,rgba(10,10,10,0.96),rgba(17,17,17,0.86)_52%,rgba(47,69,92,0.24))]">
+      <motion.div
+        animate={{
+          y: [0, -5, 0],
+          boxShadow: [
+            "0 30px 105px rgba(0,0,0,0.56), 0 0 62px rgba(66,106,140,0.18)",
+            "0 40px 132px rgba(0,0,0,0.64), 0 0 92px rgba(66,106,140,0.32), 0 0 54px rgba(196,145,47,0.2)",
+            "0 30px 105px rgba(0,0,0,0.56), 0 0 62px rgba(66,106,140,0.18)",
+          ],
+        }}
+        transition={{
+          duration: 5.8,
+          repeat: Infinity,
+          ease: breatheEase,
+          delay: pulseDelay,
+        }}
+        className="relative overflow-hidden rounded-[1.25rem] bg-[linear-gradient(135deg,#F2D36A_0%,#E0B84A_16%,#C4912F_34%,#8A641E_50%,rgba(66,106,140,0.76)_72%,#E0B84A_100%)] p-[1px] transition duration-500 group-hover:-translate-y-1 group-hover:shadow-[0_38px_125px_rgba(0,0,0,0.62),0_0_80px_rgba(196,145,47,0.22),0_0_72px_rgba(66,106,140,0.26)]"
+      >
+        <motion.div
+          animate={{
+            backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+            filter: [
+              "saturate(1) brightness(1)",
+              "saturate(1.16) brightness(1.08)",
+              "saturate(1) brightness(1)",
+            ],
+          }}
+          transition={{
+            duration: 8.6,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: pulseDelay,
+          }}
+          className="relative aspect-square overflow-hidden rounded-[calc(1.25rem-1px)] border border-gold/14 bg-[radial-gradient(circle_at_50%_18%,rgba(196,145,47,0.18),transparent_32%),radial-gradient(circle_at_78%_76%,rgba(66,106,140,0.32),transparent_38%),linear-gradient(145deg,rgba(10,10,10,0.96),rgba(17,17,17,0.86)_52%,rgba(47,69,92,0.24))]"
+        >
           <div className="absolute inset-0 bg-[linear-gradient(rgba(66,106,140,0.065)_1px,transparent_1px),linear-gradient(90deg,rgba(196,145,47,0.038)_1px,transparent_1px)] bg-[size:32px_32px] opacity-45" />
           <div className="absolute inset-5 rounded-2xl border border-gold/18 bg-black/18 shadow-[inset_0_1px_0_rgba(237,232,222,0.08),inset_0_0_62px_rgba(66,106,140,0.16)]" />
 
-          <Image
-            src={pillar.image}
-            alt={pillar.alt}
-            fill
-            sizes="(min-width: 1280px) 520px, (min-width: 1024px) 44vw, 90vw"
-            className="relative z-10 object-contain p-3 drop-shadow-[0_24px_42px_rgba(0,0,0,0.46)] transition duration-700 group-hover:scale-[1.025] group-hover:drop-shadow-[0_30px_52px_rgba(196,145,47,0.22)]"
-            priority={priority}
-          />
+          <motion.div
+            animate={{
+              scale: [1, 1.026, 1],
+              filter: [
+                "drop-shadow(0 24px 42px rgba(0,0,0,0.46)) drop-shadow(0 0 0 rgba(66,106,140,0))",
+                "drop-shadow(0 30px 52px rgba(0,0,0,0.5)) drop-shadow(0 0 34px rgba(66,106,140,0.34)) drop-shadow(0 0 22px rgba(196,145,47,0.2))",
+                "drop-shadow(0 24px 42px rgba(0,0,0,0.46)) drop-shadow(0 0 0 rgba(66,106,140,0))",
+              ],
+            }}
+            transition={{
+              duration: 5.8,
+              repeat: Infinity,
+              ease: breatheEase,
+              delay: pulseDelay,
+            }}
+            className="absolute inset-0 z-10"
+          >
+            <Image
+              src={pillar.image}
+              alt={pillar.alt}
+              fill
+              sizes="(min-width: 1280px) 520px, (min-width: 1024px) 44vw, 90vw"
+              className="object-contain p-3 transition duration-700 group-hover:scale-[1.025]"
+              priority={priority}
+            />
+          </motion.div>
 
           <div className="absolute inset-x-6 top-0 z-20 h-px bg-gradient-to-r from-transparent via-gold-bright/80 to-transparent" />
           <div className="absolute inset-y-6 left-0 z-20 w-px bg-gradient-to-b from-transparent via-gold/48 to-transparent" />
           <div className="absolute inset-y-6 right-0 z-20 w-px bg-gradient-to-b from-transparent via-steel-bright/52 to-transparent" />
-          <span className="absolute left-4 top-4 z-20 h-7 w-7 border-l border-t border-gold/52" />
-          <span className="absolute right-4 top-4 z-20 h-7 w-7 border-r border-t border-gold/52" />
-          <span className="absolute bottom-4 left-4 z-20 h-7 w-7 border-b border-l border-steel-bright/42" />
-          <span className="absolute bottom-4 right-4 z-20 h-7 w-7 border-b border-r border-steel-bright/42" />
+          <motion.div
+            aria-hidden="true"
+            animate={{ opacity: [0.36, 0.82, 0.36] }}
+            transition={{
+              duration: 5.8,
+              repeat: Infinity,
+              ease: breatheEase,
+              delay: pulseDelay,
+            }}
+            className="absolute inset-0 z-20"
+          >
+            <span className="absolute left-4 top-4 h-7 w-7 border-l border-t border-gold/60" />
+            <span className="absolute right-4 top-4 h-7 w-7 border-r border-t border-gold/60" />
+            <span className="absolute bottom-4 left-4 h-7 w-7 border-b border-l border-steel-bright/52" />
+            <span className="absolute bottom-4 right-4 h-7 w-7 border-b border-r border-steel-bright/52" />
+          </motion.div>
+
+          <motion.div
+            aria-hidden="true"
+            animate={{
+              opacity: [0.14, 0.42, 0.14],
+              scale: [0.92, 1.05, 0.92],
+            }}
+            transition={{
+              duration: 6.4,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: pulseDelay + 0.2,
+            }}
+            className="absolute inset-8 z-20 rounded-full border border-gold/24 shadow-[0_0_40px_rgba(224,184,74,0.22),inset_0_0_36px_rgba(66,106,140,0.16)]"
+          />
+          <motion.div
+            aria-hidden="true"
+            animate={{
+              opacity: [0.18, 0.46, 0.18],
+              rotate: [0, 1.5, 0],
+            }}
+            transition={{
+              duration: 9,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: pulseDelay,
+            }}
+            className="absolute inset-10 z-20 bg-[conic-gradient(from_140deg,transparent_0deg,rgba(224,184,74,0.28)_22deg,transparent_46deg,transparent_178deg,rgba(66,106,140,0.34)_206deg,transparent_236deg,transparent_360deg)] p-px [mask:linear-gradient(#000_0_0)_content-box,linear-gradient(#000_0_0)] [mask-composite:exclude]"
+          />
 
           <motion.span
             aria-hidden="true"
@@ -189,8 +314,8 @@ function ImageArtifact({
             transition={{ duration: 8.4, repeat: Infinity, ease: "easeInOut" }}
             className="absolute top-0 z-20 h-full w-1/4 rotate-12 bg-gradient-to-r from-transparent via-ivory/12 to-transparent"
           />
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </div>
   );
 }

@@ -46,3 +46,65 @@ body {
 a {
   text-decoration: none;
 }
+
+.hero-stage {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "origin"
+    "icon"
+    "flank"
+    "infra";
+  justify-items: center;
+  align-items: center;
+  row-gap: clamp(1.1rem, 4vw, 1.75rem);
+  margin-inline: auto;
+}
+
+.hero-stage__origin {
+  grid-area: origin;
+}
+
+.hero-stage__icon {
+  grid-area: icon;
+}
+
+.hero-stage__infra {
+  grid-area: infra;
+}
+
+.hero-stage__flank {
+  grid-area: flank;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.9rem, 6vw, 1.75rem);
+}
+
+@media (min-width: 860px) {
+  .hero-stage {
+    grid-template-columns: minmax(88px, 1fr) auto minmax(88px, 1fr);
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+      ".     origin .   "
+      "intel icon   auth"
+      ".     infra  .   ";
+    row-gap: clamp(0.75rem, 3vw, 1.5rem);
+    column-gap: clamp(1.25rem, 4vw, 3rem);
+  }
+
+  .hero-stage__flank {
+    display: contents;
+  }
+
+  .hero-stage__intel {
+    grid-area: intel;
+    justify-self: end;
+  }
+
+  .hero-stage__auth {
+    grid-area: auth;
+    justify-self: start;
+  }
+}
